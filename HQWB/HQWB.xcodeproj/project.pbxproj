@@ -56,6 +56,7 @@
 		82F7203B1E641DB000B13BA0 /* HQWB */ = {
 			isa = PBXGroup;
 			children = (
+				82F720531E6427C700B13BA0 /* Classes */,
 				82F7203C1E641DB000B13BA0 /* AppDelegate.swift */,
 				82F7203E1E641DB000B13BA0 /* ViewController.swift */,
 				82F720401E641DB000B13BA0 /* Main.storyboard */,
@@ -65,6 +66,69 @@
 				82F720431E641DB000B13BA0 /* HQWB.xcdatamodeld */,
 			);
 			path = HQWB;
+			sourceTree = "<group>";
+		};
+		82F720531E6427C700B13BA0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				82F720541E6427C700B13BA0 /* Compose(发布) */,
+				82F720551E6427C700B13BA0 /* Discover(发现) */,
+				82F720561E6427C700B13BA0 /* Home(首页) */,
+				82F720571E6427C700B13BA0 /* Main(主要) */,
+				82F720581E6427C700B13BA0 /* Message(消息) */,
+				82F720591E6427C700B13BA0 /* Profile(我) */,
+				82F7205A1E6427C700B13BA0 /* Tools(工具) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		82F720541E6427C700B13BA0 /* Compose(发布) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Compose(发布)";
+			sourceTree = "<group>";
+		};
+		82F720551E6427C700B13BA0 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		82F720561E6427C700B13BA0 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		82F720571E6427C700B13BA0 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		82F720581E6427C700B13BA0 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		82F720591E6427C700B13BA0 /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Profile(我)";
+			sourceTree = "<group>";
+		};
+		82F7205A1E6427C700B13BA0 /* Tools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tools(工具)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
