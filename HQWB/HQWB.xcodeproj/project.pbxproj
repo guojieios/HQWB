@@ -11,8 +11,8 @@
 		82F7203F1E641DB000B13BA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7203E1E641DB000B13BA0 /* ViewController.swift */; };
 		82F720421E641DB000B13BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F720401E641DB000B13BA0 /* Main.storyboard */; };
 		82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82F720431E641DB000B13BA0 /* HQWB.xcdatamodeld */; };
-		82F720471E641DB000B13BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F720461E641DB000B13BA0 /* Assets.xcassets */; };
 		82F7204A1E641DB000B13BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F720481E641DB000B13BA0 /* LaunchScreen.storyboard */; };
+		82F720521E6420E500B13BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F720511E6420E500B13BA0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +21,9 @@
 		82F7203E1E641DB000B13BA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82F720411E641DB000B13BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82F720441E641DB000B13BA0 /* HQWB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HQWB.xcdatamodel; sourceTree = "<group>"; };
-		82F720461E641DB000B13BA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82F720491E641DB000B13BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82F7204B1E641DB000B13BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F720511E6420E500B13BA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,8 @@
 				82F7203C1E641DB000B13BA0 /* AppDelegate.swift */,
 				82F7203E1E641DB000B13BA0 /* ViewController.swift */,
 				82F720401E641DB000B13BA0 /* Main.storyboard */,
-				82F720461E641DB000B13BA0 /* Assets.xcassets */,
 				82F720481E641DB000B13BA0 /* LaunchScreen.storyboard */,
+				82F720511E6420E500B13BA0 /* Assets.xcassets */,
 				82F7204B1E641DB000B13BA0 /* Info.plist */,
 				82F720431E641DB000B13BA0 /* HQWB.xcdatamodeld */,
 			);
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F7204A1E641DB000B13BA0 /* LaunchScreen.storyboard in Resources */,
-				82F720471E641DB000B13BA0 /* Assets.xcassets in Resources */,
+				82F720521E6420E500B13BA0 /* Assets.xcassets in Resources */,
 				82F720421E641DB000B13BA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,10 +251,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = HQWB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hqyj.HQWB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -262,10 +265,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = HQWB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hqyj.HQWB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -288,6 +294,7 @@
 				82F720501E641DB000B13BA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
