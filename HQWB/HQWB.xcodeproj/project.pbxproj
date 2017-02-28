@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C181E65947100BE0573 /* Home.storyboard */; };
+		822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1B1E6594B500BE0573 /* Message.storyboard */; };
+		822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1D1E6594CC00BE0573 /* Discover.storyboard */; };
+		822E0C211E6594DD00BE0573 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C201E6594DD00BE0573 /* Profile.storyboard */; };
 		82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7203C1E641DB000B13BA0 /* AppDelegate.swift */; };
 		82F720421E641DB000B13BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F720401E641DB000B13BA0 /* Main.storyboard */; };
 		82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82F720431E641DB000B13BA0 /* HQWB.xcdatamodeld */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		822E0C191E65947100BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		822E0C1B1E6594B500BE0573 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
+		822E0C1E1E6594CC00BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
+		822E0C201E6594DD00BE0573 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		82F720391E641DB000B13BA0 /* HQWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HQWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F7203C1E641DB000B13BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F720411E641DB000B13BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				82F7205F1E64387400B13BA0 /* DiscoverViewController.swift */,
+				822E0C1D1E6594CC00BE0573 /* Discover.storyboard */,
 			);
 			path = "Discover(发现)";
 			sourceTree = "<group>";
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				82F7205D1E6433F600B13BA0 /* HomeViewController.swift */,
+				822E0C181E65947100BE0573 /* Home.storyboard */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				82F720611E64388200B13BA0 /* MessageViewController.swift */,
+				822E0C1B1E6594B500BE0573 /* Message.storyboard */,
 			);
 			path = "Message(消息)";
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				82F720631E64388F00B13BA0 /* ProfileViewController.swift */,
+				822E0C201E6594DD00BE0573 /* Profile.storyboard */,
 			);
 			path = "Profile(我)";
 			sourceTree = "<group>";
@@ -203,7 +215,11 @@
 			files = (
 				82F7204A1E641DB000B13BA0 /* LaunchScreen.storyboard in Resources */,
 				82F720521E6420E500B13BA0 /* Assets.xcassets in Resources */,
+				822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */,
 				82F720421E641DB000B13BA0 /* Main.storyboard in Resources */,
+				822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */,
+				822E0C211E6594DD00BE0573 /* Profile.storyboard in Resources */,
+				822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +243,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		822E0C181E65947100BE0573 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				822E0C191E65947100BE0573 /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		822E0C1D1E6594CC00BE0573 /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				822E0C1E1E6594CC00BE0573 /* Base */,
+			);
+			name = Discover.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		82F720401E641DB000B13BA0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
