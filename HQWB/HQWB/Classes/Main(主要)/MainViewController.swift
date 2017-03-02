@@ -14,7 +14,10 @@ class MainViewController: UITabBarController {
     // Swift 中懒加载
    private lazy var imageNames = ["tabbar_home","tabbar_message_center","","tabbar_discover","tabbar_profile"]
     
-   private lazy var composeButton = UIButton()
+//   private lazy var composeButton = UIButton.creatButton("tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
+       private lazy var composeButton = UIButton(imageName: "tabbar_compose_icon_add",bgImageName: "tabbar_compose_button")
+
+   
     
     
     override func viewDidLoad() {
@@ -23,15 +26,6 @@ class MainViewController: UITabBarController {
        // 设置 发布按钮
         // 1. 添加到视图中
         tabBar.addSubview(composeButton)
-        
-        // 2. 设置图片
-        composeButton.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
-        composeButton.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Highlighted)
-        composeButton.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: .Normal)
-        composeButton.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: .Highlighted)
-        
-        // 设置大小
-        composeButton.sizeToFit()
         
         
         // 3. 设置位置
