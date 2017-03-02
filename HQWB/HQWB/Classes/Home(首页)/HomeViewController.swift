@@ -14,6 +14,11 @@ class HomeViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // 首页 不需要调用函数的
+        visiterView.addRotationAnimation()
+        
+        
     }
 
  }
