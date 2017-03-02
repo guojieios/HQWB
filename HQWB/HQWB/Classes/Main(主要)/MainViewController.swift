@@ -11,8 +11,8 @@ import UIKit
 class MainViewController: UITabBarController {
 
     // 需要字符串数组存取 图片名称
-    // Swift 中懒加载
-   private lazy var imageNames = ["tabbar_home","tabbar_message_center","","tabbar_discover","tabbar_profile"]
+//    // Swift 中懒加载
+//   private lazy var imageNames = ["tabbar_home","tabbar_message_center","","tabbar_discover","tabbar_profile"]
     
 //   private lazy var composeButton = UIButton.creatButton("tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
        private lazy var composeButton = UIButton(imageName: "tabbar_compose_icon_add",bgImageName: "tabbar_compose_button")
@@ -38,41 +38,37 @@ class MainViewController: UITabBarController {
     
     
     
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        // 用代码设置 items 的选中图片
-        
-        // 1.遍历items
-        for i in 0..<tabBar.items!.count {
-            
-            
-            // 2.拿到item
-            let item = tabBar.items![i]
-            
-            // 设置中间按钮 不与用户交互
-            if(i == 2) {
-                
-                item.enabled = false
-                
-                continue
-                
-            }
-            
-            
-            // 3.设置高亮状态
-            
-            item.selectedImage = UIImage(named: imageNames[i] + "_highlighted")
-            
-            
-
-        
-        
-        
-    }
-    }
+//    
+//    override func viewWillAppear(animated: Bool) {
+//        
+//        super.viewWillAppear(animated)
+//        
+//        // 用代码设置 items 的选中图片
+//        
+//        // 1.遍历items
+//        for i in 0..<tabBar.items!.count {
+//            
+//            
+//            // 2.拿到item
+//            let item = tabBar.items![i]
+//            
+//            // 设置中间按钮 不与用户交互
+//            if(i == 2) {
+//                
+//                item.enabled = false
+//                
+//                continue
+//                
+//            }
+//            
+//            
+//            // 3.设置高亮状态
+//            
+//            item.selectedImage = UIImage(named: imageNames[i] + "_highlighted")
+//        
+//        
+//    }
+//    }
     
  
     

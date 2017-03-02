@@ -28,7 +28,7 @@
         <scene sceneID="gTK-v6-3uh">
             <objects>
                 <navigationController id="7v6-7Z-V3o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" id="G24-pf-atg"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_highlighted" id="G24-pf-atg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ToX-qB-hf7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -45,5 +45,6 @@
     </scenes>
     <resources>
         <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_highlighted" width="30" height="30"/>
     </resources>
 </document>
