@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // appearance - 统一设置
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         
-        
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         
         return true
     }

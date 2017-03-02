@@ -26,7 +26,9 @@ class VisitorView: UIView {
     @IBOutlet weak var tipLabel: UILabel!
     
     
+    @IBOutlet weak var registerBtn: UIButton!
     
+    @IBOutlet weak var loginBtn: UIButton!
     
     // 创建方法 - 修改控件的属性
     func setUpVisitorViewInfo(iconViewName : String,title : String) {
