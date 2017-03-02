@@ -23,18 +23,14 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // 设置 发布按钮
-        // 1. 添加到视图中
-        tabBar.addSubview(composeButton)
-        
-        
-        // 3. 设置位置
-        composeButton.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
-       
+        composeBtn()
         
         
         }
         
+    
+    
+
     
     
     
@@ -73,3 +69,44 @@ class MainViewController: UITabBarController {
  
     
 }
+
+// 对控制器的UI 扩至
+extension MainViewController {
+    
+    func composeBtn() {
+        
+  
+    // 设置 发布按钮
+    // 1. 添加到视图中
+    tabBar.addSubview(composeButton)
+    
+    
+    // 2. 设置位置
+    composeButton.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
+    
+    // 3.响应点击事件
+    // ction: <#T##Selector#> ： @SEL -
+        // Swift中事件执行 ： 1.Selector("setUpComposeBtnClick")   2. "setUpComposeBtnClick"
+       composeButton.addTarget(self, action: "setUpComposeBtnClick" , forControlEvents: .TouchUpInside)
+        
+        
+        
+      }
+}
+
+
+// 点击事件
+extension MainViewController {
+    
+    func setUpComposeBtnClick() {
+        
+        
+        print("setUpComposeBtnClick")
+        
+    }
+    
+    
+    
+}
+
+

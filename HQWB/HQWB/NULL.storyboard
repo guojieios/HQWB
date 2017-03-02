@@ -5,52 +5,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="Hfl-IX-Yt6">
-            <objects>
-                <tableViewController id="80k-5m-fov" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="urN-j1-461">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YJM-1l-9jp">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJM-1l-9jp" id="7ZM-61-9Q8">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="80k-5m-fov" id="pyu-Q3-8B7"/>
-                            <outlet property="delegate" destination="80k-5m-fov" id="BIA-a6-HoF"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="OVx-RZ-vss"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dnb-ZY-oE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="251" y="671"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XiM-0L-dPe">
             <objects>
                 <navigationController id="XZ8-5Z-gpK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="9hu-yk-zkA"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="9hu-yk-zkA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qps-qA-FMR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="80k-5m-fov" kind="relationship" relationship="rootViewController" id="KQz-pO-4vU"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbO-Dl-i06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-569" y="671"/>
+            <point key="canvasLocation" x="-499" y="656"/>
         </scene>
     </scenes>
 </document>
