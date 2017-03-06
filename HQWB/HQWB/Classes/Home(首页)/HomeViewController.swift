@@ -11,9 +11,10 @@ import UIKit
 class HomeViewController: BaseController {
     
     
-    var isPresented : Bool = false
+    
 
     private lazy var titleButton : TitleButton = TitleButton()
+    private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,152 +105,14 @@ extension HomeViewController {
     popVC.modalPresentationStyle = .Custom
     
     
-    // !! : 设置转场效果
-    popVC.transitioningDelegate = self
-    
+    // !! : 设置转场效果 - 设置代理 ： 找到一个遵守协议的对象，执行代理方法
+    popVC.transitioningDelegate = popoverAnimator
     
     // 4. 跳转控制器
     presentViewController(popVC, animated: true, completion: nil)
     
         
     }
-    
-    
-}
-
-
-// 自定义转场的代理方法
-extension HomeViewController : UIViewControllerTransitioningDelegate {
-    
-    // 目的： 修改view的frame
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        let presentation = HQPresentationController(presentedViewController: presented, presentingViewController: presenting)
-        return presentation
-    }
-    
-
-    // 目的： 修改转场动画出现
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        isPresented = true
-        
-        return self
-        
-        
-    }
-    
-    
-    // 目的： 修改转场动画消失
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        isPresented = false
-        
-        return self
-    }
-    
-    
-    
-}
-
-
-
-
-
-// MARK : - 自定义转场动画
-extension HomeViewController : UIViewControllerAnimatedTransitioning {
-    
-    // 转场动画持续的时间
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        
-        return 0.5
-    }
-    
-    
-    // 获取到转场控制器的内容 ： 消失的view 与  弹出的view
-    /*  UITransitionContextFromViewKey   获取消失的view
-        UITransitionContextToViewKey     获取到弹出的view
-    */
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        
-        isPresented ? animationForPresentedView(transitionContext) : animationForDismissdView(transitionContext)
-        
-        
-        
-    }
-    
-    // 自定义转场动画 出现
-    func animationForPresentedView(transitionContext: UIViewControllerContextTransitioning) {
-        
-        
-        // 1.获取弹出的view
-        let presentedView = transitionContext.viewForKey(UITransitionContextToViewKey)
-        
-        
-        
-        // 2. 将获取到的view 加入到 containerView里 - 容器视图里
-        transitionContext.containerView()?.addSubview(presentedView!)
-        
-        
-        // 3.执行动画
-        presentedView?.transform = CGAffineTransformMakeScale(1.0, 0.0)
-        // 设置锚点
-        presentedView?.layer.anchorPoint = CGPointMake(0.5, 0)
-        
-        UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
-            
-            // 恢复到原大小
-            presentedView?.transform = CGAffineTransformIdentity
-            
-            
-            }) { (isFinish) -> Void in
-                
-                // 动画结束 - 告诉转场上下文 完成
-                
-                // 必须告诉 转场上下文 动画完成
-                transitionContext.completeTransition(true)
-                
-        }
-
-        
-        
-    }
-    
-    
-    // 自定义转场动画 消失
-    func animationForDismissdView(transitionContext: UIViewControllerContextTransitioning) {
-        
-        // 1. 获取到消失的view
-        let dismissView = transitionContext.viewForKey(UITransitionContextFromViewKey)
-        
-        
-        // 2.执行动画
-        UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
-            
-            // 缩小view
-            dismissView?.transform = CGAffineTransformMakeScale(1.0, 0.00001)
-            
-            
-            }) { (isFinish) -> Void in
-                
-                
-                // 消去视图
-                dismissView?.removeFromSuperview()
-                
-                transitionContext.completeTransition(true)
-                
-                
-        }
-        
-        
-        
-    }
-    
-    
-
-    
-    
-    
     
     
 }

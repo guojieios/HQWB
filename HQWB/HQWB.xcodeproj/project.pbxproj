@@ -12,6 +12,7 @@
 		8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */; };
 		8221D0531E6D1FBF0073D6A2 /* PopoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */; };
 		8221D0571E6D2B200073D6A2 /* HQPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0561E6D2B200073D6A2 /* HQPresentationController.swift */; };
+		8221D05D1E6D5A810073D6A2 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D05C1E6D5A810073D6A2 /* PopoverAnimator.swift */; };
 		822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C181E65947100BE0573 /* Home.storyboard */; };
 		822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1B1E6594B500BE0573 /* Message.storyboard */; };
 		822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1D1E6594CC00BE0573 /* Discover.storyboard */; };
@@ -39,6 +40,7 @@
 		8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoViewController.swift; sourceTree = "<group>"; };
 		8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoViewController.xib; sourceTree = "<group>"; };
 		8221D0561E6D2B200073D6A2 /* HQPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQPresentationController.swift; sourceTree = "<group>"; };
+		8221D05C1E6D5A810073D6A2 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		822E0C191E65947100BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		822E0C1B1E6594B500BE0573 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		822E0C1E1E6594CC00BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */,
 				8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */,
 				8221D0561E6D2B200073D6A2 /* HQPresentationController.swift */,
+				8221D05C1E6D5A810073D6A2 /* PopoverAnimator.swift */,
 			);
 			path = PopoverView;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				82F7205E1E6433F600B13BA0 /* HomeViewController.swift in Sources */,
 				82F720641E64388F00B13BA0 /* ProfileViewController.swift in Sources */,
 				82F720621E64388200B13BA0 /* MessageViewController.swift in Sources */,
+				8221D05D1E6D5A810073D6A2 /* PopoverAnimator.swift in Sources */,
 				82489A341E67F47B00E54A2A /* VisitorView.swift in Sources */,
 				82F720601E64387400B13BA0 /* DiscoverViewController.swift in Sources */,
 				8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */,
