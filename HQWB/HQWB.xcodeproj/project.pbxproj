@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */; };
 		822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C181E65947100BE0573 /* Home.storyboard */; };
 		822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1B1E6594B500BE0573 /* Message.storyboard */; };
 		822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1D1E6594CC00BE0573 /* Discover.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		822E0C191E65947100BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		822E0C1B1E6594B500BE0573 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		822E0C1E1E6594CC00BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				82489A271E67C74500E54A2A /* Category-Button.swift */,
+				8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				82F7205C1E64338B00B13BA0 /* MainViewController.swift in Sources */,
 				82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */,
+				8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */,
 				82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */,
 				82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */,
 				82F7205E1E6433F600B13BA0 /* HomeViewController.swift in Sources */,
