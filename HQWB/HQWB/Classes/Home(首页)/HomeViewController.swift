@@ -101,6 +101,10 @@ extension HomeViewController {
     popVC.modalPresentationStyle = .Custom
     
     
+    // !! : 设置转场效果
+    popVC.transitioningDelegate = self
+    
+    
     // 4. 跳转控制器
     presentViewController(popVC, animated: true, completion: nil)
     
@@ -112,7 +116,16 @@ extension HomeViewController {
 
 
 
-
+extension HomeViewController : UIViewControllerTransitioningDelegate {
+    
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        let presentation = HQPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        return presentation
+    }
+    
+    
+    
+}
 
 
 
