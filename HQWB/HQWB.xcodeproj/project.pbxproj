@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */; };
 		8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0421E6D04B40073D6A2 /* TitleButton.swift */; };
+		8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */; };
+		8221D0531E6D1FBF0073D6A2 /* PopoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */; };
 		822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C181E65947100BE0573 /* Home.storyboard */; };
 		822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1B1E6594B500BE0573 /* Message.storyboard */; };
 		822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1D1E6594CC00BE0573 /* Discover.storyboard */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		8221D0421E6D04B40073D6A2 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoViewController.swift; sourceTree = "<group>"; };
+		8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoViewController.xib; sourceTree = "<group>"; };
 		822E0C191E65947100BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		822E0C1B1E6594B500BE0573 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		822E0C1E1E6594CC00BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8221D04F1E6D1FA80073D6A2 /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */,
+				8221D0511E6D1FBF0073D6A2 /* PopoViewController.xib */,
+			);
+			path = PopoverView;
+			sourceTree = "<group>";
+		};
 		82489A261E67C73000E54A2A /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		82F720561E6427C700B13BA0 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				8221D04F1E6D1FA80073D6A2 /* PopoverView */,
 				82F7205D1E6433F600B13BA0 /* HomeViewController.swift */,
 				822E0C181E65947100BE0573 /* Home.storyboard */,
 			);
@@ -256,6 +270,7 @@
 				82F720521E6420E500B13BA0 /* Assets.xcassets in Resources */,
 				822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */,
 				822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */,
+				8221D0531E6D1FBF0073D6A2 /* PopoViewController.xib in Resources */,
 				822E0C211E6594DD00BE0573 /* Profile.storyboard in Resources */,
 				822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */,
 				82489A361E67F4A700E54A2A /* VisitorView.xib in Resources */,
@@ -273,6 +288,7 @@
 				82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */,
 				8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */,
 				82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */,
+				8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */,
 				82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */,
 				82F7205E1E6433F600B13BA0 /* HomeViewController.swift in Sources */,
 				82F720641E64388F00B13BA0 /* ProfileViewController.swift in Sources */,

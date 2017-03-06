@@ -86,10 +86,24 @@ extension HomeViewController {
     // 函数私有化后，没有办法调用
    @objc private func titleButtonClick() {
         // 设置图片的选中
+    // 1. 设置选中状态
     titleButton.selected = !titleButton.selected
         
         print("标题按钮")
-        
+    
+    // 2. 创建 控制器
+    
+    let popVC = PopoViewController()
+    
+    
+    
+    // 3. 设置弹出的状态
+    popVC.modalPresentationStyle = .Custom
+    
+    
+    // 4. 跳转控制器
+    presentViewController(popVC, animated: true, completion: nil)
+    
         
     }
     
