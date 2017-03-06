@@ -9,6 +9,9 @@
 import UIKit
 
 class HomeViewController: BaseController {
+    
+    
+    var isPresented : Bool = false
 
     private lazy var titleButton : TitleButton = TitleButton()
     
@@ -118,20 +121,32 @@ extension HomeViewController {
 // 自定义转场的代理方法
 extension HomeViewController : UIViewControllerTransitioningDelegate {
     
-    
+    // 目的： 修改view的frame
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         let presentation = HQPresentationController(presentedViewController: presented, presentingViewController: presenting)
         return presentation
     }
     
 
+    // 目的： 修改转场动画出现
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
+        isPresented = true
         
         return self
         
         
     }
+    
+    
+    // 目的： 修改转场动画消失
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        isPresented = false
+        
+        return self
+    }
+    
     
     
 }
@@ -157,6 +172,16 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning {
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
+        isPresented ? animationForPresentedView(transitionContext) : animationForDismissdView(transitionContext)
+        
+        
+        
+    }
+    
+    // 自定义转场动画 出现
+    func animationForPresentedView(transitionContext: UIViewControllerContextTransitioning) {
+        
+        
         // 1.获取弹出的view
         let presentedView = transitionContext.viewForKey(UITransitionContextToViewKey)
         
@@ -181,14 +206,49 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning {
                 
                 // 动画结束 - 告诉转场上下文 完成
                 
+                // 必须告诉 转场上下文 动画完成
                 transitionContext.completeTransition(true)
+                
+        }
+
+        
+        
+    }
+    
+    
+    // 自定义转场动画 消失
+    func animationForDismissdView(transitionContext: UIViewControllerContextTransitioning) {
+        
+        // 1. 获取到消失的view
+        let dismissView = transitionContext.viewForKey(UITransitionContextFromViewKey)
+        
+        
+        // 2.执行动画
+        UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+            
+            // 缩小view
+            dismissView?.transform = CGAffineTransformMakeScale(1.0, 0.00001)
+            
+            
+            }) { (isFinish) -> Void in
+                
+                
+                // 消去视图
+                dismissView?.removeFromSuperview()
+                
+                transitionContext.completeTransition(true)
+                
                 
         }
         
         
         
-        
     }
+    
+    
+
+    
+    
     
     
     
