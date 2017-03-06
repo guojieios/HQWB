@@ -17,7 +17,7 @@ class HQPresentationController: UIPresentationController {
         
         // 设置frame
         
-        presentedView()?.frame = CGRectMake(100,65, 150, 250)
+        presentedView()?.frame = CGRectMake(UIScreen.mainScreen().bounds.size.width * 0.5 - 75,65, 150, 250)
         // 添加蒙版
         setCoverView()
         

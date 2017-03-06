@@ -115,14 +115,23 @@ extension HomeViewController {
 }
 
 
-
+// 自定义转场的代理方法
 extension HomeViewController : UIViewControllerTransitioningDelegate {
+    
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         let presentation = HQPresentationController(presentedViewController: presented, presentingViewController: presenting)
         return presentation
     }
     
+
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        
+        return self
+        
+        
+    }
     
     
 }
@@ -131,9 +140,59 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
 
 
 
-
-
-
+// MARK : - 自定义转场动画
+extension HomeViewController : UIViewControllerAnimatedTransitioning {
+    
+    // 转场动画持续的时间
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        
+        return 0.5
+    }
+    
+    
+    // 获取到转场控制器的内容 ： 消失的view 与  弹出的view
+    /*  UITransitionContextFromViewKey   获取消失的view
+        UITransitionContextToViewKey     获取到弹出的view
+    */
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        
+        // 1.获取弹出的view
+        let presentedView = transitionContext.viewForKey(UITransitionContextToViewKey)
+        
+        
+        
+        // 2. 将获取到的view 加入到 containerView里 - 容器视图里
+        transitionContext.containerView()?.addSubview(presentedView!)
+        
+        
+        // 3.执行动画
+        presentedView?.transform = CGAffineTransformMakeScale(1.0, 0.0)
+        // 设置锚点
+        presentedView?.layer.anchorPoint = CGPointMake(0.5, 0)
+        
+        UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+            
+            // 恢复到原大小
+            presentedView?.transform = CGAffineTransformIdentity
+            
+            
+            }) { (isFinish) -> Void in
+                
+                // 动画结束 - 告诉转场上下文 完成
+                
+                transitionContext.completeTransition(true)
+                
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+}
 
 
 
