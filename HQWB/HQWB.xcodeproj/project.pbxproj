@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */; };
+		8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0421E6D04B40073D6A2 /* TitleButton.swift */; };
 		822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C181E65947100BE0573 /* Home.storyboard */; };
 		822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1B1E6594B500BE0573 /* Message.storyboard */; };
 		822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C1D1E6594CC00BE0573 /* Discover.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		8221D0421E6D04B40073D6A2 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		822E0C191E65947100BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		822E0C1B1E6594B500BE0573 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		822E0C1E1E6594CC00BE0573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				82489A261E67C73000E54A2A /* Category */,
+				8221D0421E6D04B40073D6A2 /* TitleButton.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				82F720621E64388200B13BA0 /* MessageViewController.swift in Sources */,
 				82489A341E67F47B00E54A2A /* VisitorView.swift in Sources */,
 				82F720601E64387400B13BA0 /* DiscoverViewController.swift in Sources */,
+				8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */,
 				82489A281E67C74500E54A2A /* Category-Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

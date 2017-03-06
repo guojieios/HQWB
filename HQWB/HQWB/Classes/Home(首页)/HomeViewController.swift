@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: BaseController {
 
-    private lazy var titleButton : UIButton = UIButton()
+    private lazy var titleButton : TitleButton = TitleButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,7 @@ extension HomeViewController {
         // 设置标题
 //        let titleButton = UIButton()
         titleButton.setTitle("gjyhy", forState: .Normal)
-        titleButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+       
         titleButton.addTarget(self, action: "titleButtonClick", forControlEvents: .TouchUpInside)
         
         navigationItem.titleView = titleButton
@@ -85,7 +85,8 @@ extension HomeViewController {
     
     // 函数私有化后，没有办法调用
    @objc private func titleButtonClick() {
-        
+        // 设置图片的选中
+    titleButton.selected = !titleButton.selected
         
         print("标题按钮")
         
