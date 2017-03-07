@@ -14,7 +14,13 @@ class HomeViewController: BaseController {
     
 
     private lazy var titleButton : TitleButton = TitleButton()
-    private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator()
+    // 属性
+    //  实例化 PopoverAnimator 对象 - 用到构造函数 PopoverAnimator()
+    private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator { (presented) -> () in
+        self.titleButton.selected = presented
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

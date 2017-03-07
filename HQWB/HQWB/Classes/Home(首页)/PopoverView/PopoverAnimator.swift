@@ -11,6 +11,27 @@ import UIKit
 class PopoverAnimator: NSObject {
 
     var isPresented : Bool = false
+    
+    // 创建闭包
+    var callBack : ((presented : Bool) -> ())?
+    
+    
+    // 构造函数
+//    init(name : String,age : Int) {
+//        <#code#>
+//    }
+//    
+    // 注意： 如果自定义了一个构造函数，没有重写系统的构造函数，自定义的构造函数会替换系统的
+//    override init() {
+//        
+//    }
+    init (callBack : ((presented : Bool) -> ())?) {
+        
+        self.callBack = callBack
+        
+    }
+    
+    
 }
 
 
@@ -31,6 +52,8 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate {
         
         isPresented = true
         
+        callBack!(presented : isPresented)
+        
         return self
         
         
@@ -41,6 +64,9 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate {
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         isPresented = false
+        
+        
+        callBack!(presented: isPresented)
         
         return self
     }
