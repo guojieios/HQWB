@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31385C3EC00686EDEFBDCBE3 /* Pods_HQWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941B4B1112D0B31EF1C4E0F9 /* Pods_HQWB.framework */; };
 		8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0401E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift */; };
 		8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0421E6D04B40073D6A2 /* TitleButton.swift */; };
 		8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221D0501E6D1FBF0073D6A2 /* PopoViewController.swift */; };
@@ -62,6 +63,9 @@
 		82F7205F1E64387400B13BA0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		82F720611E64388200B13BA0 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		82F720631E64388F00B13BA0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		941B4B1112D0B31EF1C4E0F9 /* Pods_HQWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE71FEB4E834FA86649B3999 /* Pods-HQWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HQWB/Pods-HQWB.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D34A9A0D6434E7019B51B6 /* Pods-HQWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-HQWB/Pods-HQWB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31385C3EC00686EDEFBDCBE3 /* Pods_HQWB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +115,8 @@
 			children = (
 				82F7203B1E641DB000B13BA0 /* HQWB */,
 				82F7203A1E641DB000B13BA0 /* Products */,
+				ABC5EFF4BB38294C56C4C793 /* Pods */,
+				A949DBD983925687834A10FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +219,23 @@
 			path = "Tools(工具)";
 			sourceTree = "<group>";
 		};
+		A949DBD983925687834A10FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				941B4B1112D0B31EF1C4E0F9 /* Pods_HQWB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABC5EFF4BB38294C56C4C793 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE71FEB4E834FA86649B3999 /* Pods-HQWB.debug.xcconfig */,
+				C7D34A9A0D6434E7019B51B6 /* Pods-HQWB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,9 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82F7204E1E641DB000B13BA0 /* Build configuration list for PBXNativeTarget "HQWB" */;
 			buildPhases = (
+				0D93E2D2B83DEC576ED5B9E9 /* [CP] Check Pods Manifest.lock */,
 				82F720351E641DB000B13BA0 /* Sources */,
 				82F720361E641DB000B13BA0 /* Frameworks */,
 				82F720371E641DB000B13BA0 /* Resources */,
+				39E9FF0B712563C62BCCE20F /* [CP] Embed Pods Frameworks */,
+				60B7B2AD99E4A58F1023AE97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,6 +311,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D93E2D2B83DEC576ED5B9E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		39E9FF0B712563C62BCCE20F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HQWB/Pods-HQWB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B7B2AD99E4A58F1023AE97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HQWB/Pods-HQWB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82F720351E641DB000B13BA0 /* Sources */ = {
@@ -423,6 +498,7 @@
 		};
 		82F7204F1E641DB000B13BA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE71FEB4E834FA86649B3999 /* Pods-HQWB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -439,6 +515,7 @@
 		};
 		82F720501E641DB000B13BA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7D34A9A0D6434E7019B51B6 /* Pods-HQWB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
