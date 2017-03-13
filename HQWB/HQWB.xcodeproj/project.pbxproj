@@ -21,6 +21,8 @@
 		822E0C261E659EB200BE0573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C251E659EB200BE0573 /* Main.storyboard */; };
 		822E0C281E659F8E00BE0573 /* NULL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C271E659F8E00BE0573 /* NULL.storyboard */; };
 		823A206A1E764A5D00C9DF54 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A20691E764A5D00C9DF54 /* NetworkTools.swift */; };
+		823A20731E766EA900C9DF54 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A20711E766EA900C9DF54 /* OAuthViewController.swift */; };
+		823A20741E766EA900C9DF54 /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823A20721E766EA900C9DF54 /* OAuthViewController.xib */; };
 		82489A281E67C74500E54A2A /* Category-Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A271E67C74500E54A2A /* Category-Button.swift */; };
 		82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A2D1E67F04700E54A2A /* BaseController.swift */; };
 		82489A341E67F47B00E54A2A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A331E67F47B00E54A2A /* VisitorView.swift */; };
@@ -50,6 +52,8 @@
 		822E0C251E659EB200BE0573 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		822E0C271E659F8E00BE0573 /* NULL.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NULL.storyboard; path = ../../NULL.storyboard; sourceTree = "<group>"; };
 		823A20691E764A5D00C9DF54 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		823A20711E766EA900C9DF54 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		823A20721E766EA900C9DF54 /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		82489A271E67C74500E54A2A /* Category-Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category-Button.swift"; sourceTree = "<group>"; };
 		82489A2D1E67F04700E54A2A /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		82489A331E67F47B00E54A2A /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 				8221D05C1E6D5A810073D6A2 /* PopoverAnimator.swift */,
 			);
 			path = PopoverView;
+			sourceTree = "<group>";
+		};
+		823A20701E766E8F00C9DF54 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				823A20711E766EA900C9DF54 /* OAuthViewController.swift */,
+				823A20721E766EA900C9DF54 /* OAuthViewController.xib */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		82489A261E67C73000E54A2A /* Category */ = {
@@ -187,6 +200,7 @@
 		82F720571E6427C700B13BA0 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				823A20701E766E8F00C9DF54 /* OAuth */,
 				82489A291E67EFF600E54A2A /* visitor */,
 				82F7205B1E64338B00B13BA0 /* MainViewController.swift */,
 				822E0C271E659F8E00BE0573 /* NULL.storyboard */,
@@ -306,6 +320,7 @@
 				82F720521E6420E500B13BA0 /* Assets.xcassets in Resources */,
 				822E0C1C1E6594B500BE0573 /* Message.storyboard in Resources */,
 				822E0C1A1E65947100BE0573 /* Home.storyboard in Resources */,
+				823A20741E766EA900C9DF54 /* OAuthViewController.xib in Resources */,
 				8221D0531E6D1FBF0073D6A2 /* PopoViewController.xib in Resources */,
 				822E0C211E6594DD00BE0573 /* Profile.storyboard in Resources */,
 				822E0C1F1E6594CC00BE0573 /* Discover.storyboard in Resources */,
@@ -371,6 +386,7 @@
 				82F7205C1E64338B00B13BA0 /* MainViewController.swift in Sources */,
 				82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */,
 				8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */,
+				823A20731E766EA900C9DF54 /* OAuthViewController.swift in Sources */,
 				82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */,
 				8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */,
 				82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */,

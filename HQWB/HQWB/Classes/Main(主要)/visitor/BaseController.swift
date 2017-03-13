@@ -16,7 +16,8 @@ class BaseController: UITableViewController {
     lazy var visiterView = VisitorView.setUpVisitorView()
     
     
-    var isLogin : Bool = true
+    // 登录
+    var isLogin : Bool = false
     
     
     override func loadView() {
@@ -83,7 +84,20 @@ extension BaseController {
     // 右边登录按钮
  @objc private func navRightItemClick() {
         
-         print("right")
+    
+    
+    // 1.创建 控制器对象
+    let OAuthVC = OAuthViewController()
+    
+    // 2. 包装一个 导航栏
+    let OAuthNav = UINavigationController(rootViewController: OAuthVC)
+    
+    
+    // 3.弹出控制器界面
+    
+    presentViewController(OAuthNav, animated: true, completion: nil)
+    
+    
         
     }
     
