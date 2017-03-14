@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OAuthViewController: UIViewController {
     
@@ -19,7 +20,8 @@ class OAuthViewController: UIViewController {
         
         //        https://api.weibo.com/oauth2/authorize?client_id=453636876&redirect_uri=http://www.makeru.com.cn/
         
-        
+        // 设置代理
+        self.webView.delegate = self
         
         SetUpNavItem()
         
@@ -97,13 +99,93 @@ extension OAuthViewController {
     
     @objc private func rightButtonClick() {
         
-        print("填充")
+        
+        // 点击填充 - 输入用户名与密码
+        let JSCode = "document.getElementById('userId').value='18101063120';document.getElementById('passwd').value='940624000yhy';"
+        
+        
+        
+        webView.stringByEvaluatingJavaScriptFromString(JSCode)
+        
+        
         
         
     }
     
     
 }
+
+
+
+// WebView的代理方法
+
+extension OAuthViewController : UIWebViewDelegate {
+    
+    // 开始加载网页
+    func webViewDidStartLoad(webView: UIWebView) {
+        
+        SVProgressHUD.show()
+        
+        
+    }
+    
+    // 结束加载网页
+    func webViewDidFinishLoad(webView: UIWebView) {
+     
+        SVProgressHUD.dismiss()
+        
+    }
+    
+    // 出现错误
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        SVProgressHUD.dismiss()
+    }
+    
+    // 发送请求 调用
+    // false : -> 不在加载界面  true: -> 继续加载页面 ----  回调地址，如果URL存在，那么停止加载回调地址
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        
+//        print(request.URL)
+        
+        
+        // 截取字符串
+        // 1. 获取到链接
+        guard let url = request.URL else {
+             return true
+            
+        }
+        
+        
+        // 2.获取链接字符串
+        let urlString = url.absoluteString
+        
+        // 2.1 判断 code 是否存在
+        guard urlString.containsString("code=") else {
+            
+            return true
+            
+        }
+        
+        // 3.截取 code= xxxxx
+        let code = urlString.componentsSeparatedByString("code=").last!
+        
+        
+        print(code)
+    
+        return false
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
 
 
 
