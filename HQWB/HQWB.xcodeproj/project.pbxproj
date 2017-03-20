@@ -28,6 +28,7 @@
 		82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A2D1E67F04700E54A2A /* BaseController.swift */; };
 		82489A341E67F47B00E54A2A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A331E67F47B00E54A2A /* VisitorView.swift */; };
 		82489A361E67F4A700E54A2A /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82489A351E67F4A700E54A2A /* VisitorView.xib */; };
+		828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D92941E7FDE9600E00CAA /* UserAccountTools.swift */; };
 		82C7A7321E7F79C800B13191 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7A7311E7F79C800B13191 /* UserAccount.swift */; };
 		82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7203C1E641DB000B13BA0 /* AppDelegate.swift */; };
 		82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82F720431E641DB000B13BA0 /* HQWB.xcdatamodeld */; };
@@ -61,6 +62,7 @@
 		82489A2D1E67F04700E54A2A /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		82489A331E67F47B00E54A2A /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		82489A351E67F4A700E54A2A /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		828D92941E7FDE9600E00CAA /* UserAccountTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountTools.swift; sourceTree = "<group>"; };
 		82C7A7311E7F79C800B13191 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		82F720391E641DB000B13BA0 /* HQWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HQWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F7203C1E641DB000B13BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				823A20711E766EA900C9DF54 /* OAuthViewController.swift */,
 				823A20721E766EA900C9DF54 /* OAuthViewController.xib */,
 				82C7A7311E7F79C800B13191 /* UserAccount.swift */,
+				828D92941E7FDE9600E00CAA /* UserAccountTools.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				823A20731E766EA900C9DF54 /* OAuthViewController.swift in Sources */,
 				82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */,
 				82C7A7321E7F79C800B13191 /* UserAccount.swift in Sources */,
+				828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */,
 				8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */,
 				82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */,
 				823A20761E76760500C9DF54 /* Commend.swift in Sources */,
