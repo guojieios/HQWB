@@ -278,6 +278,25 @@ extension OAuthViewController {
             
             print(account)
             
+            
+            
+            // 4. 存储 用户的信息  - 归档和接档
+            
+            // 4.1 获取沙盒路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+            
+            // 4.2 拼接文件名称 --- 获取文件路径
+            accountPath = (accountPath as NSString).stringByAppendingPathComponent("account.plist")
+            
+            
+            print(accountPath)
+            
+            // 4.3 存取文件
+            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            
+            
+            
+            
         }
         
     }

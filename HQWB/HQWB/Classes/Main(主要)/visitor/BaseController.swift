@@ -23,6 +23,39 @@ class BaseController: UITableViewController {
     override func loadView() {
         // 调用父类的方法
         
+               // 1. 获取沙盒路径
+        // 4.1 获取沙盒路径
+        var accountPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+        
+        // 4.2 拼接文件名称 --- 获取文件路径
+        accountPath = (accountPath as NSString).stringByAppendingPathComponent("account.plist")
+
+        
+        // 2. 接档文件 - 获取信息
+      let account = NSKeyedUnarchiver.unarchiveObjectWithFile(accountPath) as? UserAccount
+        
+       
+        // 3. 判断 登录
+        if let account = account {
+            
+            // 1.取出 过期信息
+            if let expireDate = account.expires_date {
+                
+                
+            // true
+                // 可用做字符串比较  --- 升序与降序
+            isLogin = expireDate.compare(NSDate()) == NSComparisonResult.OrderedDescending
+                
+                
+            }
+            
+            
+            
+
+        }
+        
+        
+        // 4. 判断加载不同的界面
         //        isLogin ? super.loadView() : 加载visiterView
         isLogin ? super.loadView() : setUpView()
         

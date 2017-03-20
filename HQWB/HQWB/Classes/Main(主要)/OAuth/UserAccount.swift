@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserAccount: NSObject {
+class UserAccount: NSObject, NSCoding {
     
     
     /**
@@ -75,7 +75,28 @@ class UserAccount: NSObject {
     
     
     
+    // MARK:- 归档/接档
+    // 解档方法
+    required init?(coder aDecoder: NSCoder) {
+        
+        access_token = aDecoder.decodeObjectForKey("access_token") as? String
+        uid = aDecoder.decodeObjectForKey("uid") as? String
+        expires_date = aDecoder.decodeObjectForKey("expires_date") as? NSDate
+        userIcon = aDecoder.decodeObjectForKey("userIcon") as? String
+        
+    }
     
+    
+    // 归档方法
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        aCoder.encodeObject(access_token, forKey: "access_token")
+        aCoder.encodeObject(expires_date, forKey: "expires_date")
+        aCoder.encodeObject(userIcon, forKey: "userIcon")
+        aCoder.encodeObject(uid, forKey: "uid")
+        
+        
+    }
     
 
 }
