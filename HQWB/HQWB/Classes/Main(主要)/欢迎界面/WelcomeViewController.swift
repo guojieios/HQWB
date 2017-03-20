@@ -27,7 +27,7 @@ class WelcomeViewController: UIViewController {
         // 空合运算符 ： 如果没有值，赋值为空“”，如果有值，赋前面的值-profileIconString
         let url = NSURL(string: profileIconString ?? "")
         
-        
+        print("aaaaaaaaaaaaaaaaaaaaa= \(url)")
         
         // 0. 获取用户头像
         IconView.setImageWithURL(url!, placeholderImage: UIImage(named: "avatar_default"))
@@ -41,9 +41,9 @@ class WelcomeViewController: UIViewController {
         // 2. 设置动画
         // usingSpringWithDamping : 阻力系数 0~1
         // initialSpringVelocity : 初始化速度
-        UIView.animateWithDuration(5.0, delay: 0.0, usingSpringWithDamping: 0.001, initialSpringVelocity: 5.0, options: [], animations: { 
+        UIView.animateWithDuration(3.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 3.0, options: [], animations: {
             
-            
+            self.view.layoutIfNeeded()
             
             
             

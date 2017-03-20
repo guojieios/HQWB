@@ -276,7 +276,7 @@ extension OAuthViewController {
             // 赋值
             account.userIcon = UserIcon
             
-            print(account)
+//            print(account)
             
             
             
@@ -293,6 +293,23 @@ extension OAuthViewController {
             
             // 4.3 存取文件
             NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            
+            
+            // 注意： 将account 设置到单例对象中去
+            UserAccountTools.ShareInstance.account = account
+            
+            
+            // 5.0 清除 登录界面
+            self.dismissViewControllerAnimated(false, completion: {
+                
+                // 5.1 调用欢迎界面
+                UIApplication.sharedApplication().keyWindow?.rootViewController = WelcomeViewController()
+                
+                
+                
+                
+            })
+            
             
             
             
