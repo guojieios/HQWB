@@ -71,9 +71,11 @@ extension NetworkTools {
             
             
             POST(usrString, parameters: parameters, progress: nil, success: { ( task : NSURLSessionDataTask, result : AnyObject?) in
-                print(result)
+//                print(result)
+                finished(result: result, error: nil)
             }) { (task : NSURLSessionDataTask?, error : NSError) in
-                print(error)
+//                print(error)
+                finished(result: nil, error: error)
             }
             
             

@@ -175,7 +175,7 @@ extension OAuthViewController : UIWebViewDelegate {
         // 获取 accesstoken 的值
         loadAccessToken(code)
         
-        print(code)
+//        print(code)
     
         return false
     }
@@ -186,15 +186,14 @@ extension OAuthViewController : UIWebViewDelegate {
     
 }
 
-
+// 请求数据
 extension OAuthViewController {
     
     private func loadAccessToken(code : String) {
         
         // 获取AccessToken的值 - 调用 网络工具类 中方法
         
-        NetworkTools.ShareInstance.loadAcessToken(code) {(result,error) -> () in
-            
+        NetworkTools.ShareInstance.loadAcessToken(code) { (result, error) in
             // 1.校验错误
             if error != nil {
                 
@@ -204,12 +203,22 @@ extension OAuthViewController {
             }
             
             // 2. 输出result
-            print(result)
+            guard let AccountDict = result else {
+                
+                
+                print("没有获取到结果")
+                
+                return
+                
+            }
             
+            // 3.  将result 字典 转换成模型
+            let account = UserAccount(dict: AccountDict)
             
-            
+            print(account)
         }
         
+    
         
     }
     
