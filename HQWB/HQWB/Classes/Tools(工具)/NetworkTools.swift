@@ -38,7 +38,7 @@ class NetworkTools: AFHTTPSessionManager {
 
 
 
-
+// 封装网络请求方法
 extension NetworkTools {
     
     // 请求封装
@@ -123,5 +123,50 @@ extension NetworkTools {
     
 }
 
+
+
+
+// 获取用户的信息
+extension NetworkTools {
+    
+     func loadUserInfo(access_token : String,uid : String,finished : (result : [String : AnyObject]?,error : NSError?)->()) {
+        
+        
+        // 1. 链接
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        // 2. 参数
+        let parames = ["access_token" : access_token , "uid" : uid]
+        
+        
+        // 3. 请求
+        request(.GET, usrString: urlString, parameters: parames) { (result, error) in
+            
+            finished(result: result as? [String : AnyObject], error: error)
+            
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
 
 

@@ -213,14 +213,75 @@ extension OAuthViewController {
             }
             
             // 3.  将result 字典 转换成模型
+            // 获取到 account的信息
             let account = UserAccount(dict: AccountDict)
             
             print(account)
+            
+            
+            // 4. 获取用户的信息
+            self.loadUserInfo(account)
         }
         
     
         
     }
+    
+    
+    // 获取用户信息 - 调用 方法
+    private func loadUserInfo(account : UserAccount) {
+        
+    // 1. 获取 access_token
+        guard let access_tokens = account.access_token else {
+            
+            return
+        }
+        
+        
+        
+        // 2. 获取 uid
+        guard let uids = account.uid else {
+            
+            
+            return
+        }
+        
+        
+        // 3. 调用方法，获取用户信息
+
+        NetworkTools.ShareInstance.loadUserInfo(access_tokens, uid: uids) { (result, error) in
+            
+            // 校验
+            if error != nil {
+                
+                print(error)
+                return
+                
+            }
+            
+            
+            // 2. 拿到用户信息  - 校验
+            guard let UserDict = result else {
+                
+                print("没有获取到信息")
+                
+                return
+            }
+            
+            print(result)
+            
+            // 3.从字典中获取 用户的信息
+            let UserIcon = UserDict["profile_image_url"] as? String
+            
+            // 赋值
+            account.userIcon = UserIcon
+            
+            print(account)
+            
+        }
+        
+    }
+    
     
     
     

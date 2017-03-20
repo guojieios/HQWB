@@ -38,6 +38,8 @@ class UserAccount: NSObject {
     // 过期时间
     var expires_date : NSDate?
     
+    // 用户头像
+    var userIcon : String?
     
     
     
@@ -66,7 +68,7 @@ class UserAccount: NSObject {
         
         
         // 模型转字典
-        return dictionaryWithValuesForKeys(["access_token","expires_date","uid"]).description
+        return dictionaryWithValuesForKeys(["access_token","expires_date","uid","userIcon"]).description
     }
     
     
