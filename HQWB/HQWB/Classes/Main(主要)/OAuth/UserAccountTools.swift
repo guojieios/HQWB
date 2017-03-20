@@ -29,6 +29,8 @@ class UserAccountTools {
         
         // 4.2 拼接文件名称 --- 获取文件路径
         
+        print(accountPath)
+        
 
         return (accountPath as NSString).stringByAppendingPathComponent("account.plist")
         
