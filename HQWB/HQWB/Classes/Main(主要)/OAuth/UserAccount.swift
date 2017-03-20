@@ -17,12 +17,28 @@ class UserAccount: NSObject {
     // 授权的Access_token
     var access_token : String?
     
-    // expires_in - 过期时间 --> 秒
-    var expires_in : NSTimeInterval = 0.0
+    // expires_in - 过期秒数 --> 秒
+    var expires_in : NSTimeInterval = 0.0 {
+        // 属性 监听 机制
+        didSet {
+            
+            // 转换成 距离现在 有多少时间
+            expires_date = NSDate(timeIntervalSinceNow: expires_in)
+            
+            
+        }
+        
+    }
     
     
     // uid  - 用户ID
     var uid : String?
+    
+    
+    // 过期时间
+    var expires_date : NSDate?
+    
+    
     
     
     // 自定义 构造函数
@@ -50,7 +66,7 @@ class UserAccount: NSObject {
         
         
         // 模型转字典
-        return dictionaryWithValuesForKeys(["access_token","expires_in","uid"]).description
+        return dictionaryWithValuesForKeys(["access_token","expires_date","uid"]).description
     }
     
     
