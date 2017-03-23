@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: BaseController {
     
     
+    // 创建数组 存取 模型
+    private lazy var Statues : [StatuesModel] = [StatuesModel]()
     
 
     private lazy var titleButton : TitleButton = TitleButton()
@@ -36,6 +38,9 @@ class HomeViewController: BaseController {
         
         // 2.设置导航栏内容
         setNavigationBar()
+        
+        
+        loadStatues()
         
     }
 
@@ -125,6 +130,90 @@ extension HomeViewController {
 
 
 
+// 请求数据
+extension HomeViewController {
+    
+    private func loadStatues() {
+        
+        NetworkTools.ShareInstance.loadStatues { (result, error) in
+            
+            // 1. 错误校验
+            if error != nil {
+                
+                print(error)
+                return
+                
+            }
+            
+            // 2. 获取数据  -- 可选
+            guard let resultArray = result else {
+                
+                
+                return
+                
+            }
+            
+            
+            // 3.字典转模型 ---- 》 获取模型对象
+            for StatuesDict in resultArray {
+                // 取出的字典转成模型数据
+                let Statues = StatuesModel(dict: StatuesDict)
+                
+                
+                // 添加到数组中去 -- 自定的
+                self.Statues.append(Statues)
+                
+                
+                
+            }
+            
+            
+            
+            // 4.刷新数据
+            self.tableView.reloadData()
+            
+//            print(self.Statues)
+            
+        }
+        
+        
+    }
+    
+}
 
 
+// 数据源方法
+
+extension HomeViewController {
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.Statues.count
+        
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        // cell 
+        // 1. 创建cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        
+        
+        // 2. cell设置数据
+        let statue = Statues[indexPath.row]
+        
+        cell.textLabel?.text = statue.text
+        
+        
+        return cell
+        
+        
+        
+        
+    }
+    
+    
+}
 

@@ -45,10 +45,14 @@ class WelcomeViewController: UIViewController {
             
             self.view.layoutIfNeeded()
             
-            
-            
+        
             
             }) { (_) in
+                
+                
+                // 动画结束后，需要重新设置跟控制器
+                UIApplication.sharedApplication().keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                
                 
         }
         

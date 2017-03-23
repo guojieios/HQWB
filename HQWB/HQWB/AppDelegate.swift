@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        print(UserAccountTools.ShareInstance.account?.access_token)
+        
+        
+        
         // appearance - 统一设置
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         

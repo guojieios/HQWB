@@ -170,3 +170,56 @@ extension NetworkTools {
 }
 
 
+
+
+// 获取首页的信息
+extension NetworkTools {
+    
+    func loadStatues(finisded : (result : [[String : AnyObject]]?,error : NSError?)->()) {
+        
+        // 1. 链接
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        
+        
+        
+        //2. 请求参数
+        let parameters = ["access_token" : (UserAccountTools.ShareInstance.account?.access_token)!]
+        
+        
+        
+        // 3.发送请求
+        request(.GET, usrString: urlString, parameters: parameters) { (result, error) in
+            
+            
+            // 1.获取字典的数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                
+                finisded(result: nil, error: error)
+                
+                
+                return
+                
+            }
+            
+            
+            // 2.将  数组数据 回调 给外部
+            finisded(result: resultDict["statuses"] as? [[String : AnyObject]], error: nil)
+            
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
