@@ -15,8 +15,37 @@ class StatuesModel: NSObject {
     // 微博正文
     var text : String?
     // 微博来源
-    var source : String?
+    var source : String?  {
+        
+        didSet {
+            
+            // 1. nil -- 校验
+            guard let source = source where source != ""  else {
+                return
+            }
+            
+            
+            // 2.对来源的字符串 处理
+//            "<a href="http://app.weibo.com/t/feed/6vtZb0" rel="nofollow">微博 weibo.com</a>"
+            
+            let startIndex = (source as NSString).rangeOfString(">").location + 1
+            // 需要截取字符串的长度
+            let long = (source as NSString).rangeOfString("</").location - startIndex
+            
+            
+            // 3. 截取字符串
+            sourceText = (source as NSString).substringWithRange(NSRange(location: startIndex, length: long))
+            
+            
+            
+            
+            
+        }
+        
+    }
     
+    // 微博来源 字符串 --- 处理过的
+    var sourceText : String?
     
 
     
@@ -25,7 +54,8 @@ class StatuesModel: NSObject {
         super.init()
         
         setValuesForKeysWithDictionary(dict)
-        
+        print(sourceText)
+        print(source)
         
     }
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
