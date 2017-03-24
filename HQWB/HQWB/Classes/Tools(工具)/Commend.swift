@@ -13,7 +13,7 @@ import Foundation
 
 
 // 设置常量
-let app_key = "453636876"
+let app_key = "1081732057"
 let redirect_uri = "http://www.makeru.com.cn/"
-let App_Secret = "c82a1280e93bd9abfd1459d4062194a9"
+let App_Secret = "558e2e5affcc46728421bd920653355f"
         

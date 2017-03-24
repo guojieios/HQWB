@@ -101,7 +101,7 @@ extension OAuthViewController {
         
         
         // 点击填充 - 输入用户名与密码
-        let JSCode = "document.getElementById('userId').value='18101063120';document.getElementById('passwd').value='940624000yhy';"
+        let JSCode = "document.getElementById('userId').value='18101063120';document.getElementById('passwd').value='940624000gj';"
         
         
         
