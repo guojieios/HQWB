@@ -11,7 +11,27 @@ import UIKit
 class StatuesModel: NSObject {
     
     // 创建时间
-    var created_at : String?
+    var created_at : String? {
+        
+        didSet {
+            
+            // 1. 空值校验
+            guard let created_at = created_at else {
+                
+                return
+                
+                
+            }
+            
+            
+            // 2. 对时间 设置
+            
+            creatAtText = NSDate.createdTimeWithString(created_at)
+            
+        }
+        
+        
+    }
     // 微博正文
     var text : String?
     // 微博来源
@@ -46,6 +66,9 @@ class StatuesModel: NSObject {
     
     // 微博来源 字符串 --- 处理过的
     var sourceText : String?
+    
+    var creatAtText : String?
+    
     
 
     

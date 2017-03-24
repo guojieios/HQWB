@@ -29,6 +29,7 @@
 		82489A341E67F47B00E54A2A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82489A331E67F47B00E54A2A /* VisitorView.swift */; };
 		82489A361E67F4A700E54A2A /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82489A351E67F4A700E54A2A /* VisitorView.xib */; };
 		82780A0C1E826AD80031B4DA /* StatuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82780A0B1E826AD80031B4DA /* StatuesModel.swift */; };
+		828C15171E83E91C00026A68 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C15161E83E91C00026A68 /* NSDate-Extension.swift */; };
 		828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D92941E7FDE9600E00CAA /* UserAccountTools.swift */; };
 		828D929E1E7FF4E500E00CAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */; };
 		828D929F1E7FF4E500E00CAA /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828D929D1E7FF4E500E00CAA /* WelcomeViewController.xib */; };
@@ -66,6 +67,7 @@
 		82489A331E67F47B00E54A2A /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		82489A351E67F4A700E54A2A /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		82780A0B1E826AD80031B4DA /* StatuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatuesModel.swift; sourceTree = "<group>"; };
+		828C15161E83E91C00026A68 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		828D92941E7FDE9600E00CAA /* UserAccountTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountTools.swift; sourceTree = "<group>"; };
 		828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		828D929D1E7FF4E500E00CAA /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		82F7205A1E6427C700B13BA0 /* Tools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				828C15161E83E91C00026A68 /* NSDate-Extension.swift */,
 				823A20691E764A5D00C9DF54 /* NetworkTools.swift */,
 				82489A261E67C73000E54A2A /* Category */,
 				8221D0421E6D04B40073D6A2 /* TitleButton.swift */,
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F7205C1E64338B00B13BA0 /* MainViewController.swift in Sources */,
+				828C15171E83E91C00026A68 /* NSDate-Extension.swift in Sources */,
 				82780A0C1E826AD80031B4DA /* StatuesModel.swift in Sources */,
 				82489A2E1E67F04700E54A2A /* BaseController.swift in Sources */,
 				8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */,
