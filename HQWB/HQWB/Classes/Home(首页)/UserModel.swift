@@ -17,9 +17,14 @@ class UserModel: NSObject {
     var profile_image_url : String?    // 用户头像
     
     
-    var verified_type : Int = -1       // 用户认证
+    var verified_type : Int = -1   // 用户认证
+     
     
-    var mbrank : Int = 0              //用户等级
+    var mbrank : Int = 0      //用户等级
+        
+     
+
+    
     
     //自定义构造函数
     

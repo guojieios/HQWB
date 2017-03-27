@@ -12,7 +12,7 @@ class HomeViewController: BaseController {
     
     
     // 创建数组 存取 模型
-    private lazy var Statues : [StatuesModel] = [StatuesModel]()
+    private lazy var viewModels : [StatuesViewModel] = [StatuesViewModel]()
     
 
     private lazy var titleButton : TitleButton = TitleButton()
@@ -159,9 +159,10 @@ extension HomeViewController {
                 // 取出的字典转成模型数据
                 let Statues = StatuesModel(dict: StatuesDict)
                 
+                let viewModel = StatuesViewModel(status: Statues)
                 
                 // 添加到数组中去 -- 自定的
-                self.Statues.append(Statues)
+                self.viewModels.append(viewModel)
                 
                 
                 
@@ -189,7 +190,7 @@ extension HomeViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.Statues.count
+        return self.viewModels.count
         
     }
     
@@ -202,9 +203,9 @@ extension HomeViewController {
         
         
         // 2. cell设置数据
-        let statue = Statues[indexPath.row]
+        let viewModel = viewModels[indexPath.row]
         
-        cell.textLabel?.text = statue.text
+        cell.textLabel?.text = viewModel.sourceText
         
         
         return cell
