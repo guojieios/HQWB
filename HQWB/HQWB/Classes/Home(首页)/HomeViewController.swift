@@ -42,6 +42,18 @@ class HomeViewController: BaseController {
         
         loadStatues()
         
+        
+        // 设置cell的高度自适应
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        // 设置 cell的预设高度
+        tableView.estimatedRowHeight = 200
+        
+        
+        
+        
     }
 
  }
