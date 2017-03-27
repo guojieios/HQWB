@@ -10,6 +10,7 @@ import UIKit
 
 
 private let edgeMargin : CGFloat = 10
+private let imageMargin : CGFloat = 10
 
 class HomeViewCell: UITableViewCell {
     
@@ -28,11 +29,14 @@ class HomeViewCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     
+    @IBOutlet weak var picView: PicCollectionView!
     
     @IBOutlet weak var contentLabelWithConstant: NSLayoutConstraint!
     
     
+    @IBOutlet weak var picViewHeightConstant: NSLayoutConstraint!
     
+    @IBOutlet weak var picViewWidthConstant: NSLayoutConstraint!
     // 给控件 赋值
     // 1. 拿到 视图模型
     var viewModel : StatuesViewModel? {
@@ -72,6 +76,18 @@ class HomeViewCell: UITableViewCell {
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.blackColor() : UIColor.orangeColor()
             
             
+            
+            // 9. 设置 图片展示的大小
+            let picViewSize = CalculatePicViewSize(viewModel.pictureURL.count)
+            
+            picViewWidthConstant.constant = picViewSize.width
+            picViewHeightConstant.constant = picViewSize.height
+            
+            
+            // 10. 需要赋值
+            picView.picURLS = viewModel.pictureURL
+            
+            
         }
         
         
@@ -93,11 +109,67 @@ class HomeViewCell: UITableViewCell {
         contentLabelWithConstant.constant = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
         
         
+        // MARK: - 拿到 collectionView的layout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        
-        
+         let  imageViewW = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
+        // 设置item的大小
+        layout.itemSize = CGSize(width: imageViewW, height: imageViewW)
         
         
     }
 
 }
+
+
+// 设置 图片展示的大小
+extension HomeViewCell {
+    
+    private func CalculatePicViewSize(count : Int) -> CGSize {
+        
+        
+        // 1. 没有图片
+        if count == 0 {
+            return CGSizeZero
+        }
+        
+        
+        
+        // 每张图片的宽度
+        let  imageViewW = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
+        
+        
+        // 2. 4 张图片
+        if count == 4 {
+            
+            let picViewHW = imageViewW * 2 + imageMargin
+            
+            return CGSize(width: picViewHW, height: picViewHW)
+            
+            
+        }
+    
+        
+        // 3. 其他
+        // 3.1 行数
+        let rows = CGFloat((count - 1) / 3 + 1)
+        
+        // 3.2 计算 picView 的高度
+        let picViewH = rows * imageViewW + (rows - 1) * imageMargin
+        
+        // 3.3 计算 picView的宽度
+        let picViewW = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
+       
+        print(picViewW)
+        
+        return CGSize(width: picViewW, height: picViewH)
+        
+    }
+    
+    
+}
+
+
+
+
+
