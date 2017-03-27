@@ -23,6 +23,10 @@ class StatuesViewModel: NSObject {
     var verifiedImage : UIImage?   // 认证 图片 处理
     var vipImage : UIImage?         // 微博 等级 处理
     
+    
+    var profileURL : NSURL?   // 用户头像的链接
+    
+    
 
     
     // 自定义构造函数
@@ -57,6 +61,12 @@ class StatuesViewModel: NSObject {
         
         
         // 2. 对 微博 时间 处理
+        if let createAt = status.created_at {
+            
+            
+            creatAtText = NSDate.createdTimeWithString(createAt)
+            
+        }
      
 
         
@@ -86,6 +96,13 @@ class StatuesViewModel: NSObject {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
             
         }
+        
+        
+        // 5. 设置 用户头像 链接
+        let profileURLString  = status.user?.profile_image_url ?? ""
+        
+        profileURL = NSURL(string: profileURLString)
+        
 
         
     }

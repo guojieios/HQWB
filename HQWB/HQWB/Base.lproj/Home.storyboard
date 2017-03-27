@@ -9,18 +9,94 @@
         <scene sceneID="OZY-lk-zOy">
             <objects>
                 <tableViewController id="BTr-Zg-gFZ" customClass="HomeViewController" customModule="HQWB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9zN-36-9ZG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" id="9zN-36-9ZG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" id="QW0-Wj-ZfS">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="104" id="QW0-Wj-ZfS" customClass="HomeViewCell" customModule="HQWB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QW0-Wj-ZfS" id="Zic-bw-5WP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="103.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="LOL-v8-1XP" userLabel="用户头像">
+                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="a3z-1d-ZfW"/>
+                                                <constraint firstAttribute="height" constant="40" id="eLv-8t-03E"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="ARt-p8-Nlh" userLabel="认证图标">
+                                            <rect key="frame" x="33" y="33" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="50m-Sb-1g1"/>
+                                                <constraint firstAttribute="width" constant="17" id="c1X-GF-q4F"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jerry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-fw-vfs" userLabel="用户名">
+                                            <rect key="frame" x="58" y="10" width="35.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brp-EG-Fzv" userLabel="发布时间">
+                                            <rect key="frame" x="58" y="38" width="40" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="来自华清创客" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trj-NZ-q8Q" userLabel="微博来源">
+                                            <rect key="frame" x="103" y="37" width="60" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cs-yq-fNN" userLabel="微博内容">
+                                            <rect key="frame" x="10" y="65" width="431.5" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="431.5" id="AGD-gG-mP1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership_level1" translatesAutoresizingMaskIntoConstraints="NO" id="Ftd-oL-GSE" userLabel="等级图标">
+                                            <rect key="frame" x="101" y="12" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="CpH-jo-AoG"/>
+                                                <constraint firstAttribute="width" constant="14" id="SFz-8F-Fcz"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Trj-NZ-q8Q" firstAttribute="leading" secondItem="Brp-EG-Fzv" secondAttribute="trailing" constant="5" id="1Ye-0L-Rra"/>
+                                        <constraint firstItem="LOL-v8-1XP" firstAttribute="leading" secondItem="Zic-bw-5WP" secondAttribute="leading" constant="10" id="Aaf-ev-de8"/>
+                                        <constraint firstItem="4cs-yq-fNN" firstAttribute="top" secondItem="ARt-p8-Nlh" secondAttribute="bottom" constant="15" id="Aeb-v7-TAY"/>
+                                        <constraint firstItem="Ftd-oL-GSE" firstAttribute="centerY" secondItem="hBb-fw-vfs" secondAttribute="centerY" id="D03-xM-TxR"/>
+                                        <constraint firstItem="hBb-fw-vfs" firstAttribute="top" secondItem="LOL-v8-1XP" secondAttribute="top" id="Dfl-Fb-yFV"/>
+                                        <constraint firstItem="LOL-v8-1XP" firstAttribute="top" secondItem="Zic-bw-5WP" secondAttribute="top" constant="10" id="Lsn-Ub-AIO"/>
+                                        <constraint firstItem="Brp-EG-Fzv" firstAttribute="bottom" secondItem="LOL-v8-1XP" secondAttribute="bottom" id="N0n-qU-57U"/>
+                                        <constraint firstItem="4cs-yq-fNN" firstAttribute="leading" secondItem="Zic-bw-5WP" secondAttribute="leading" constant="10" id="O8A-Ln-ORG"/>
+                                        <constraint firstItem="ARt-p8-Nlh" firstAttribute="trailing" secondItem="LOL-v8-1XP" secondAttribute="trailing" id="ON7-Sn-YmE"/>
+                                        <constraint firstItem="Trj-NZ-q8Q" firstAttribute="centerY" secondItem="Brp-EG-Fzv" secondAttribute="centerY" id="ddh-sk-Q7d"/>
+                                        <constraint firstItem="ARt-p8-Nlh" firstAttribute="bottom" secondItem="LOL-v8-1XP" secondAttribute="bottom" id="edX-2k-DdN"/>
+                                        <constraint firstItem="hBb-fw-vfs" firstAttribute="leading" secondItem="LOL-v8-1XP" secondAttribute="trailing" constant="8" id="n0u-rD-LAQ"/>
+                                        <constraint firstItem="Ftd-oL-GSE" firstAttribute="leading" secondItem="hBb-fw-vfs" secondAttribute="trailing" constant="8" id="r75-ac-nnh"/>
+                                        <constraint firstItem="Brp-EG-Fzv" firstAttribute="leading" secondItem="hBb-fw-vfs" secondAttribute="leading" id="v0l-6K-pts"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="4cs-yq-fNN" id="PUt-BJ-jJH"/>
+                                    <outlet property="contentLabelWithConstant" destination="AGD-gG-mP1" id="lcD-Ye-tjn"/>
+                                    <outlet property="iconView" destination="LOL-v8-1XP" id="oqi-f2-8DZ"/>
+                                    <outlet property="screenNameLabel" destination="hBb-fw-vfs" id="8i3-ET-bs5"/>
+                                    <outlet property="sourceLabel" destination="Trj-NZ-q8Q" id="d4m-Gh-Z2J"/>
+                                    <outlet property="timeLabel" destination="Brp-EG-Fzv" id="x7A-F4-Ak0"/>
+                                    <outlet property="verifiedView" destination="ARt-p8-Nlh" id="bbB-Qr-z6r"/>
+                                    <outlet property="vipView" destination="Ftd-oL-GSE" id="LEK-Id-5mR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSX-MP-XEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="-991"/>
+            <point key="canvasLocation" x="787" y="-1001"/>
         </scene>
         <!--首页-->
         <scene sceneID="ala-uA-5bW">
@@ -54,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar_default_small" width="68" height="68"/>
+        <image name="avatar_vip" width="17" height="17"/>
+        <image name="common_icon_membership_level1" width="14" height="14"/>
         <image name="tabbar_home" width="30" height="30"/>
         <image name="tabbar_home_highlighted" width="30" height="30"/>
     </resources>

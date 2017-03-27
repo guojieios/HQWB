@@ -199,13 +199,17 @@ extension HomeViewController {
         
         // cell 
         // 1. 创建cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! HomeViewCell
         
         
         // 2. cell设置数据
-        let viewModel = viewModels[indexPath.row]
+//        let viewModel = viewModels[indexPath.row]
         
-        cell.textLabel?.text = viewModel.sourceText
+        
+        // 给 cell的viewModel 属性 赋值
+//        cell.viewModel = viewModel
+        cell.viewModel = viewModels[indexPath.row]
+     
         
         
         return cell
