@@ -24,6 +24,10 @@ class StatuesModel: NSObject {
     var mid : Int = 0
     
     
+    // 获取 图片
+    var pic_urls : [[String : String]]?
+    
+    
 
     // 重写构造方法
     init(dict : [String : AnyObject]) {

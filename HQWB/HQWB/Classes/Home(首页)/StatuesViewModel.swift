@@ -26,6 +26,8 @@ class StatuesViewModel: NSObject {
     
     var profileURL : NSURL?   // 用户头像的链接
     
+    // 图片 数据 处理
+    var pictureURL : [NSURL] = [NSURL]()
     
 
     
@@ -102,6 +104,39 @@ class StatuesViewModel: NSObject {
         let profileURLString  = status.user?.profile_image_url ?? ""
         
         profileURL = NSURL(string: profileURLString)
+        
+        
+        
+        
+        // 6. 设置 图片 处理
+        
+        // 1.拿到数组
+        if let picArray = status.pic_urls {
+            
+            for picDict in picArray {
+                
+                // URL 
+                guard let picURLString = picDict["thumbnail_pic"] else {
+                    
+                    
+                    continue
+                    
+                }
+                
+                
+                // 添加到数组中
+               
+                pictureURL.append( NSURL(string: picURLString)!)
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
+        
         
 
         
