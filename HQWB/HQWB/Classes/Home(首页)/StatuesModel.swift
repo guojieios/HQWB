@@ -28,6 +28,10 @@ class StatuesModel: NSObject {
     var pic_urls : [[String : String]]?
     
     
+    // 转发微博
+    var retweeted_status : StatuesModel?
+    
+    
 
     // 重写构造方法
     init(dict : [String : AnyObject]) {
@@ -41,7 +45,12 @@ class StatuesModel: NSObject {
             user = UserModel(dict: userDict)
         }
         
-        
+        // 2. 将转发微博 字典 转换成 用户模型对象
+        if let retweetedstatusDict = dict["retweeted_status"] as? [String : AnyObject] {
+            
+            retweeted_status = StatuesModel(dict: retweetedstatusDict)
+            
+        }
         
         
         

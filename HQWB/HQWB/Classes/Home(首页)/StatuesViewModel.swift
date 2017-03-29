@@ -110,8 +110,13 @@ class StatuesViewModel: NSObject {
         
         // 6. 设置 图片 处理
         
+        // 转发微博的图片与自己的图片不能共存
+        let picArray = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        
+        
+        
         // 1.拿到数组
-        if let picArray = status.pic_urls {
+        if let picArray = picArray {
             
             for picDict in picArray {
                 

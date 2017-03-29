@@ -30,6 +30,7 @@ class HomeViewCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     
+    @IBOutlet weak var retweetedContentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
     
     @IBOutlet weak var contentLabelWithConstant: NSLayoutConstraint!
@@ -89,6 +90,28 @@ class HomeViewCell: UITableViewCell {
             picView.picURLS = viewModel.pictureURL
             
             
+            // 11. 设置转发微博的正文
+            if viewModel.statues?.retweeted_status != nil {
+    
+                
+                if let screenName = viewModel.statues?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.statues?.retweeted_status?.text {
+                    
+                    
+                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText // -- @ :
+                    
+                    
+                    
+                }
+                
+            } else {
+                
+                retweetedContentLabel.text = nil
+                
+                
+            }
+            
+            
+            
         }
         
         
@@ -144,14 +167,20 @@ extension HomeViewCell {
             // 1.拿到下载的图片
             // 字符串
             let urlString = viewModel?.pictureURL.last?.absoluteString
-            let image = SDWebImageManager.sharedManager().imageCache?.imageFromDiskCacheForKey(urlString)
+            let image = SDWebImageManager.sharedManager().imageCache?.imageFromDiskCacheForKey(urlString) ?? nil
+            
+            
+            if image == nil {
+                
+                return CGSizeZero
+            }
             
             // 设置item的大小
-            layout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            layout.itemSize = CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
             
             
             // collectionView
-            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            return CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
         }
         
         
