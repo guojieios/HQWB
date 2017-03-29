@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: BaseController {
     
@@ -14,7 +15,7 @@ class HomeViewController: BaseController {
     // 创建数组 存取 模型
     private lazy var viewModels : [StatuesViewModel] = [StatuesViewModel]()
     
-
+    
     private lazy var titleButton : TitleButton = TitleButton()
     // 属性
     //  实例化 PopoverAnimator 对象 - 用到构造函数 PopoverAnimator()
@@ -26,7 +27,7 @@ class HomeViewController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // 首页 不需要调用函数的
         visiterView.addRotationAnimation()
@@ -55,43 +56,43 @@ class HomeViewController: BaseController {
         
         
     }
-
- }
-
     
+}
+
+
 // 设置 UI界面
 extension HomeViewController {
     
     private func setNavigationBar() {
         
         // 设置内容
-//        let leftBtn = UIButton()
-//        leftBtn.setImage(UIImage(named: "navigationbar_friendattention"), forState: .Normal)
-//        leftBtn.setImage(UIImage(named: "navigationbar_friendattention_highlighted"), forState: .Highlighted)
-//        leftBtn.sizeToFit()
+        //        let leftBtn = UIButton()
+        //        leftBtn.setImage(UIImage(named: "navigationbar_friendattention"), forState: .Normal)
+        //        leftBtn.setImage(UIImage(named: "navigationbar_friendattention_highlighted"), forState: .Highlighted)
+        //        leftBtn.sizeToFit()
         
         
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
-//        
-//        let rightBtn = UIButton()
-//        rightBtn.setImage(UIImage(named: "navigationbar_pop"), forState: .Normal)
-//        rightBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: .Highlighted)
-//        rightBtn.sizeToFit()
-//        
-//        
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+        //
+        //        let rightBtn = UIButton()
+        //        rightBtn.setImage(UIImage(named: "navigationbar_pop"), forState: .Normal)
+        //        rightBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: .Highlighted)
+        //        rightBtn.sizeToFit()
+        //
+        //
+        //        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
-//        
+        //
         
         
         // 设置标题
-//        let titleButton = UIButton()
+        //        let titleButton = UIButton()
         titleButton.setTitle("gjyhy", forState: .Normal)
-       
+        
         titleButton.addTarget(self, action: "titleButtonClick", forControlEvents: .TouchUpInside)
         
         navigationItem.titleView = titleButton
@@ -111,29 +112,29 @@ extension HomeViewController {
 extension HomeViewController {
     
     // 函数私有化后，没有办法调用
-   @objc private func titleButtonClick() {
+    @objc private func titleButtonClick() {
         // 设置图片的选中
-    // 1. 设置选中状态
-    titleButton.selected = !titleButton.selected
+        // 1. 设置选中状态
+        titleButton.selected = !titleButton.selected
         
         print("标题按钮")
-    
-    // 2. 创建 控制器
-    
-    let popVC = PopoViewController()
-    
-    
-    
-    // 3. 设置弹出的状态
-    popVC.modalPresentationStyle = .Custom
-    
-    
-    // !! : 设置转场效果 - 设置代理 ： 找到一个遵守协议的对象，执行代理方法
-    popVC.transitioningDelegate = popoverAnimator
-    
-    // 4. 跳转控制器
-    presentViewController(popVC, animated: true, completion: nil)
-    
+        
+        // 2. 创建 控制器
+        
+        let popVC = PopoViewController()
+        
+        
+        
+        // 3. 设置弹出的状态
+        popVC.modalPresentationStyle = .Custom
+        
+        
+        // !! : 设置转场效果 - 设置代理 ： 找到一个遵守协议的对象，执行代理方法
+        popVC.transitioningDelegate = popoverAnimator
+        
+        // 4. 跳转控制器
+        presentViewController(popVC, animated: true, completion: nil)
+        
         
     }
     
@@ -182,15 +183,75 @@ extension HomeViewController {
             
             
             
-            // 4.刷新数据
-            self.tableView.reloadData()
+            // 下载图片 - 缓存图片
+            self.cachesImage(self.viewModels)
             
-//            print(self.Statues)
+            
+            
             
         }
         
         
     }
+    
+    
+    
+    private func cachesImage(viewModels : [StatuesViewModel]) {
+        
+        // 添加 多线程组
+        let group = dispatch_group_create()
+        
+
+        
+        // 1.遍历 数组模型
+        for viewModel in viewModels {
+            
+            // 图片链接
+            for picURL in viewModel.pictureURL {
+               
+               
+                
+                //  加入到 组
+                dispatch_group_enter(group)
+                // 缓存图片
+                SDWebImageManager.sharedManager().imageDownloader?.downloadImageWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                    
+                    
+                    print("下载了一张图片")
+                    
+                    
+                    // 离开 组
+                    dispatch_group_leave(group)
+                    
+                })
+                
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
+        // 4.刷新数据
+       
+    // 通知 数据刷新
+        
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            
+            self.tableView.reloadData()
+            print("刷新数据")
+            
+            //            print(self.Statues)
+        }
+        
+        
+    }
+    
+    
+    
+    
     
 }
 
@@ -209,19 +270,19 @@ extension HomeViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        // cell 
+        // cell
         // 1. 创建cell
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! HomeViewCell
         
         
         // 2. cell设置数据
-//        let viewModel = viewModels[indexPath.row]
+        //        let viewModel = viewModels[indexPath.row]
         
         
         // 给 cell的viewModel 属性 赋值
-//        cell.viewModel = viewModel
+        //        cell.viewModel = viewModel
         cell.viewModel = viewModels[indexPath.row]
-     
+        
         
         
         return cell

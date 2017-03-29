@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 private let edgeMargin : CGFloat = 10
@@ -133,6 +134,26 @@ extension HomeViewCell {
             return CGSizeZero
         }
         
+        // 取出对象的layout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        
+        // 2. 单张图片展示
+        if count == 1 {
+            
+            // 1.拿到下载的图片
+            // 字符串
+            let urlString = viewModel?.pictureURL.last?.absoluteString
+            let image = SDWebImageManager.sharedManager().imageCache?.imageFromDiskCacheForKey(urlString)
+            
+            // 设置item的大小
+            layout.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            
+            
+            // collectionView
+            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+        }
+        
         
         
         // 每张图片的宽度
@@ -160,7 +181,7 @@ extension HomeViewCell {
         // 3.3 计算 picView的宽度
         let picViewW = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
        
-        print(picViewW)
+//        print(picViewW)
         
         return CGSize(width: picViewW, height: picViewH)
         
