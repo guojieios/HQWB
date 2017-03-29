@@ -35,6 +35,7 @@ class HomeViewCell: UITableViewCell {
     
     @IBOutlet weak var contentLabelWithConstant: NSLayoutConstraint!
     
+    @IBOutlet weak var bgView: UIView!
     
     @IBOutlet weak var picViewHeightConstant: NSLayoutConstraint!
     
@@ -93,12 +94,16 @@ class HomeViewCell: UITableViewCell {
             // 11. 设置转发微博的正文
             if viewModel.statues?.retweeted_status != nil {
     
+                // 1. 设置微博转发正文
                 
                 if let screenName = viewModel.statues?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.statues?.retweeted_status?.text {
                     
                     
-                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText // -- @ :
+                    retweetedContentLabel.text = "@" + "\(screenName): " + retweetedText // -- @ :
                     
+                   
+                    //2. 设置背景颜色
+                    bgView.hidden = false
                     
                     
                 }
@@ -106,7 +111,7 @@ class HomeViewCell: UITableViewCell {
             } else {
                 
                 retweetedContentLabel.text = nil
-                
+                bgView.hidden = true
                 
             }
             
