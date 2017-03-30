@@ -175,7 +175,7 @@ extension NetworkTools {
 // 获取首页的信息
 extension NetworkTools {
     
-    func loadStatues(finisded : (result : [[String : AnyObject]]?,error : NSError?)->()) {
+    func loadStatues(since_id : Int,finisded : (result : [[String : AnyObject]]?,error : NSError?)->()) {
         
         // 1. 链接
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
@@ -183,7 +183,7 @@ extension NetworkTools {
         
         
         //2. 请求参数
-        let parameters = ["access_token" : (UserAccountTools.ShareInstance.account?.access_token)!]
+        let parameters = ["access_token" : (UserAccountTools.ShareInstance.account?.access_token)!,"since_id" : "\(since_id)"]
         
         
         

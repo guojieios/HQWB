@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseController {
     
@@ -40,8 +41,7 @@ class HomeViewController: BaseController {
         // 2.设置导航栏内容
         setNavigationBar()
         
-        
-        loadStatues()
+
         
         
         // 设置cell的高度自适应
@@ -52,7 +52,8 @@ class HomeViewController: BaseController {
         // 设置 cell的预设高度
         tableView.estimatedRowHeight = 200
         
-        
+        // 调用刷新
+        setUpHeaderView()
         
         
     }
@@ -96,10 +97,38 @@ extension HomeViewController {
         titleButton.addTarget(self, action: "titleButtonClick", forControlEvents: .TouchUpInside)
         
         navigationItem.titleView = titleButton
-        
-        
-        
     }
+    
+        
+        
+        // 设置 刷新
+        private func setUpHeaderView() {
+            
+            // 1. 创建一个headerView
+            let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadNewStatues")
+            
+            
+            // 2. 设置属性
+            header.setTitle("下拉刷新", forState: .Idle)
+            header.setTitle("释放更新", forState: .Pulling)
+            header.setTitle("加载中……", forState: .Refreshing)
+            
+            
+            // 3. tableView 设置 header
+            tableView.mj_header = header
+            
+            
+            // 4. 进入刷新状态
+            tableView.mj_header.beginRefreshing()
+            
+            
+            
+            
+        }
+       
+        
+        
+        
     
     
     
@@ -146,10 +175,31 @@ extension HomeViewController {
 // 请求数据
 extension HomeViewController {
     
-    private func loadStatues() {
+    
+    
+    @objc private func loadNewStatues() {
         
-        NetworkTools.ShareInstance.loadStatues { (result, error) in
+        loadStatues(true)
+        
+    }
+    
+    // 加载数据
+    private func loadStatues(isNewDate : Bool) {
+        
+        // 需要加载新的数据
+        
+        // 获取到 since_id
+        var since_id = 0
+        if isNewDate {
             
+            since_id = viewModels.first?.statues?.mid ?? 0
+            
+        }
+        
+        
+        
+        
+        NetworkTools.ShareInstance.loadStatues(since_id) { (result, error) in
             // 1. 错误校验
             if error != nil {
                 
@@ -168,6 +218,7 @@ extension HomeViewController {
             
             
             // 3.字典转模型 ---- 》 获取模型对象
+            var tempViewModel = [StatuesViewModel]()
             for StatuesDict in resultArray {
                 // 取出的字典转成模型数据
                 let Statues = StatuesModel(dict: StatuesDict)
@@ -175,12 +226,15 @@ extension HomeViewController {
                 let viewModel = StatuesViewModel(status: Statues)
                 
                 // 添加到数组中去 -- 自定的
-                self.viewModels.append(viewModel)
+                tempViewModel.append(viewModel)
                 
                 
                 
             }
             
+            
+            // 4. 拼接 原数据与新数据
+            self.viewModels = tempViewModel + self.viewModels
             
             
             // 下载图片 - 缓存图片
@@ -201,15 +255,15 @@ extension HomeViewController {
         // 添加 多线程组
         let group = dispatch_group_create()
         
-
+        
         
         // 1.遍历 数组模型
         for viewModel in viewModels {
             
             // 图片链接
             for picURL in viewModel.pictureURL {
-               
-               
+                
+                
                 
                 //  加入到 组
                 dispatch_group_enter(group)
@@ -235,21 +289,26 @@ extension HomeViewController {
         
         
         // 4.刷新数据
-       
-    // 通知 数据刷新
+        
+        // 通知 数据刷新
         
         dispatch_group_notify(group, dispatch_get_main_queue()) {
             
             self.tableView.reloadData()
             print("刷新数据")
             
+            self.tableView.mj_header.endRefreshing()
+            
+            
             //            print(self.Statues)
         }
         
         
-    }
-    
-    
+  
+
+        }
+            
+            
     
     
     
