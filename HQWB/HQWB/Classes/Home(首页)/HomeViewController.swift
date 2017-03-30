@@ -18,6 +18,9 @@ class HomeViewController: BaseController {
     
     
     private lazy var titleButton : TitleButton = TitleButton()
+    
+    private lazy var tipLabel : UILabel = UILabel()
+    
     // 属性
     //  实例化 PopoverAnimator 对象 - 用到构造函数 PopoverAnimator()
     private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator { (presented) -> () in
@@ -55,6 +58,9 @@ class HomeViewController: BaseController {
         // 调用刷新
         setUpHeaderView()
         setUpFooterView()
+        
+        // 调用 提示label
+        setUpTipLabel()
         
         
     }
@@ -115,6 +121,7 @@ extension HomeViewController {
             header.setTitle("加载中……", forState: .Refreshing)
             
             
+            
             // 3. tableView 设置 header
             tableView.mj_header = header
             
@@ -142,6 +149,26 @@ extension HomeViewController {
     }
     
     
+    // 设置提示 label
+
+    private func setUpTipLabel() {
+        
+        // 添加到 父类控件上
+        navigationController?.navigationBar.insertSubview(tipLabel, atIndex: 0)
+        
+        // 设置 label 的frame
+        
+        tipLabel.frame = CGRectMake(0, 10, UIScreen.mainScreen().bounds.width, 32)
+        
+        
+        // 设置label的属性
+        tipLabel.backgroundColor = UIColor.orangeColor()
+        tipLabel.textColor = UIColor.whiteColor()
+        tipLabel.font = UIFont.systemFontOfSize(14.0)
+        tipLabel.textAlignment = .Center
+        tipLabel.hidden = true
+        
+    }
         
     
     
@@ -341,12 +368,53 @@ extension HomeViewController {
             
             
             //            print(self.Statues)
+            
+            // 显示 提示label
+            self.showTipLabel(viewModels.count)
+            
+            
+            
         }
         
         
         
 
         }
+    
+    // 提示label
+    private func showTipLabel(count : Int) {
+        
+        // 1. 设置文字
+        tipLabel.hidden = false
+        tipLabel.text = count == 0 ? "没有新数据" : "更新了\(count)数据"
+        
+        
+        // 2. 设置 显示 动画
+        UIView.animateWithDuration(1.0, animations: { 
+            
+            // 显示 动画
+            self.tipLabel.frame.origin.y = 44
+            
+            
+            }) { (_) in
+                
+                // 结束后动画
+                UIView.animateWithDuration(1.0, delay: 1.5, options: [], animations: { 
+                    self.tipLabel.frame.origin.y = 10
+                    }, completion: { (_) in
+                        
+                      self.tipLabel.hidden = true
+                        
+                })
+                
+                
+        }
+        
+        
+        
+        
+        
+    }
             
             
     
