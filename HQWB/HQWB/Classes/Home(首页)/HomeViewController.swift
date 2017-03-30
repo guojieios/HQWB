@@ -54,6 +54,7 @@ class HomeViewController: BaseController {
         
         // 调用刷新
         setUpHeaderView()
+        setUpFooterView()
         
         
     }
@@ -101,7 +102,7 @@ extension HomeViewController {
     
         
         
-        // 设置 刷新
+        // 设置 下拉 刷新
         private func setUpHeaderView() {
             
             // 1. 创建一个headerView
@@ -127,7 +128,20 @@ extension HomeViewController {
         }
        
         
+    
+    // 设置 上拉 加载
+    private func setUpFooterView() {
         
+        // 1. 创建footer
+        let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "loadMoreDate")
+        
+        // 2. 设置footerview - tableView
+        tableView.mj_footer = footer
+        
+        
+    }
+    
+    
         
     
     
@@ -175,8 +189,16 @@ extension HomeViewController {
 // 请求数据
 extension HomeViewController {
     
+    // 加载更多数据
+    @objc private func loadMoreDate() {
+        
+        
+        loadStatues(false)
+        
+    }
     
     
+    // 加载最新数据
     @objc private func loadNewStatues() {
         
         loadStatues(true)
@@ -190,16 +212,24 @@ extension HomeViewController {
         
         // 获取到 since_id
         var since_id = 0
+        var max_id = 0
+        
         if isNewDate {
             
             since_id = viewModels.first?.statues?.mid ?? 0
+            
+        } else {
+            
+            // 更多的数据
+            max_id = viewModels.last?.statues?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
             
         }
         
         
         
         
-        NetworkTools.ShareInstance.loadStatues(since_id) { (result, error) in
+        NetworkTools.ShareInstance.loadStatues(since_id, max_id: max_id) { (result, error) in
             // 1. 错误校验
             if error != nil {
                 
@@ -234,8 +264,17 @@ extension HomeViewController {
             
             
             // 4. 拼接 原数据与新数据
-            self.viewModels = tempViewModel + self.viewModels
-            
+            if isNewDate {
+                
+                self.viewModels = tempViewModel + self.viewModels
+                
+                
+            } else {
+                
+                self.viewModels = self.viewModels + tempViewModel
+                
+                
+            }
             
             // 下载图片 - 缓存图片
             self.cachesImage(self.viewModels)
@@ -298,13 +337,14 @@ extension HomeViewController {
             print("刷新数据")
             
             self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
             
             
             //            print(self.Statues)
         }
         
         
-  
+        
 
         }
             
