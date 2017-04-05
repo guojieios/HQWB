@@ -22,6 +22,9 @@
 		822E0C281E659F8E00BE0573 /* NULL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822E0C271E659F8E00BE0573 /* NULL.storyboard */; };
 		8231F4951E88B94100A916F5 /* StatuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F4941E88B94100A916F5 /* StatuesViewModel.swift */; };
 		8231F4971E88E09400A916F5 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F4961E88E09400A916F5 /* HomeViewCell.swift */; };
+		8238A2C31E94F172003465D5 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238A2C11E94F172003465D5 /* ComposeViewController.swift */; };
+		8238A2C41E94F172003465D5 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8238A2C21E94F172003465D5 /* ComposeViewController.xib */; };
+		8238A2C61E94F59C003465D5 /* composeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238A2C51E94F59C003465D5 /* composeTitleView.swift */; };
 		823A206A1E764A5D00C9DF54 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A20691E764A5D00C9DF54 /* NetworkTools.swift */; };
 		823A20731E766EA900C9DF54 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A20711E766EA900C9DF54 /* OAuthViewController.swift */; };
 		823A20741E766EA900C9DF54 /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823A20721E766EA900C9DF54 /* OAuthViewController.xib */; };
@@ -64,6 +67,9 @@
 		822E0C271E659F8E00BE0573 /* NULL.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NULL.storyboard; path = ../../NULL.storyboard; sourceTree = "<group>"; };
 		8231F4941E88B94100A916F5 /* StatuesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatuesViewModel.swift; sourceTree = "<group>"; };
 		8231F4961E88E09400A916F5 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		8238A2C11E94F172003465D5 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		8238A2C21E94F172003465D5 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		8238A2C51E94F59C003465D5 /* composeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = composeTitleView.swift; sourceTree = "<group>"; };
 		823A20691E764A5D00C9DF54 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		823A20711E766EA900C9DF54 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		823A20721E766EA900C9DF54 /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
@@ -207,6 +213,9 @@
 		82F720541E6427C700B13BA0 /* Compose(发布) */ = {
 			isa = PBXGroup;
 			children = (
+				8238A2C11E94F172003465D5 /* ComposeViewController.swift */,
+				8238A2C21E94F172003465D5 /* ComposeViewController.xib */,
+				8238A2C51E94F59C003465D5 /* composeTitleView.swift */,
 			);
 			path = "Compose(发布)";
 			sourceTree = "<group>";
@@ -355,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8238A2C41E94F172003465D5 /* ComposeViewController.xib in Resources */,
 				822E0C261E659EB200BE0573 /* Main.storyboard in Resources */,
 				822E0C281E659F8E00BE0573 /* NULL.storyboard in Resources */,
 				82F7204A1E641DB000B13BA0 /* LaunchScreen.storyboard in Resources */,
@@ -451,7 +461,9 @@
 				82F720601E64387400B13BA0 /* DiscoverViewController.swift in Sources */,
 				8221D0431E6D04B40073D6A2 /* TitleButton.swift in Sources */,
 				826F06591E893AD700C2E423 /* PicCollectionView.swift in Sources */,
+				8238A2C61E94F59C003465D5 /* composeTitleView.swift in Sources */,
 				82489A281E67C74500E54A2A /* Category-Button.swift in Sources */,
+				8238A2C31E94F172003465D5 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

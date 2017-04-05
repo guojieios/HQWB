@@ -187,7 +187,7 @@ extension HomeViewController {
         // 1. 设置选中状态
         titleButton.selected = !titleButton.selected
         
-        print("标题按钮")
+//        print("标题按钮")
         
         // 2. 创建 控制器
         
@@ -260,7 +260,7 @@ extension HomeViewController {
             // 1. 错误校验
             if error != nil {
                 
-                print(error)
+//                print(error)
                 return
                 
             }
@@ -284,6 +284,7 @@ extension HomeViewController {
                 
                 // 添加到数组中去 -- 自定的
                 tempViewModel.append(viewModel)
+//                tempViewModel.insert(viewModel, atIndex: 0)
                 
                 
                 
@@ -298,7 +299,7 @@ extension HomeViewController {
                 
             } else {
                 
-                self.viewModels = self.viewModels + tempViewModel
+                self.viewModels += tempViewModel
                 
                 
             }
@@ -337,7 +338,7 @@ extension HomeViewController {
                 SDWebImageManager.sharedManager().imageDownloader?.downloadImageWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _) in
                     
                     
-                    print("下载了一张图片")
+//                    print("下载了一张图片")
                     
                     
                     // 离开 组
@@ -361,7 +362,7 @@ extension HomeViewController {
         dispatch_group_notify(group, dispatch_get_main_queue()) {
             
             self.tableView.reloadData()
-            print("刷新数据")
+//            print("刷新数据")
             
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
@@ -386,7 +387,8 @@ extension HomeViewController {
         
         // 1. 设置文字
         tipLabel.hidden = false
-        tipLabel.text = count == 0 ? "没有新数据" : "更新了\(count)数据"
+        tipLabel.text = count == 20 ? "没有新数据" : "更新了\(count - 20)数据"
+      
         
         
         // 2. 设置 显示 动画
@@ -430,7 +432,7 @@ extension HomeViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.viewModels.count
+        return viewModels.count
         
     }
     

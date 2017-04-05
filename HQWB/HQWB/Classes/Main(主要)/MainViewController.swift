@@ -99,9 +99,21 @@ extension MainViewController {
 extension MainViewController {
     
     func setUpComposeBtnClick() {
+     // 点击 弹出一个 view
+        // 1. 创建一个 发布控制器
+        let composeVC = ComposeViewController()
         
         
-        print("setUpComposeBtnClick")
+        // 2. 包装导航控制器
+        let composeNav = UINavigationController(rootViewController: composeVC)
+        
+        
+        
+        // 3. 弹出 发布控制器
+        presentViewController(composeNav, animated: true, completion: nil)
+        
+        
+        
         
     }
     
