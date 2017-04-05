@@ -9,6 +9,10 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
+    
+    // 懒加载 属性
+    private lazy var titleView : composeTitleView = composeTitleView()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,12 @@ extension ComposeViewController {
         
         // 设置发布按钮，默认不能点击
         navigationItem.rightBarButtonItem?.enabled = false
+        
+        
+    
+        // 2. 添加 title视图
+        titleView.frame = CGRectMake(0, 0, 100, 40)
+        navigationItem.titleView = titleView
         
         
         

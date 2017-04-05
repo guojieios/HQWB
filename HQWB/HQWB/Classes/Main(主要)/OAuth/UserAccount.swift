@@ -41,6 +41,13 @@ class UserAccount: NSObject, NSCoding {
     // 用户头像
     var userIcon : String?
     
+   // 用户名
+    var screenName : String?
+    
+    
+  
+    
+    
     
     
     // 自定义 构造函数
@@ -68,7 +75,7 @@ class UserAccount: NSObject, NSCoding {
         
         
         // 模型转字典
-        return dictionaryWithValuesForKeys(["access_token","expires_date","uid","userIcon"]).description
+        return dictionaryWithValuesForKeys(["access_token","expires_date","uid","userIcon","screenName"]).description
     }
     
     
@@ -83,6 +90,8 @@ class UserAccount: NSObject, NSCoding {
         uid = aDecoder.decodeObjectForKey("uid") as? String
         expires_date = aDecoder.decodeObjectForKey("expires_date") as? NSDate
         userIcon = aDecoder.decodeObjectForKey("userIcon") as? String
+        screenName = aDecoder.decodeObjectForKey("screenName") as? String
+    
         
     }
     
@@ -94,7 +103,8 @@ class UserAccount: NSObject, NSCoding {
         aCoder.encodeObject(expires_date, forKey: "expires_date")
         aCoder.encodeObject(userIcon, forKey: "userIcon")
         aCoder.encodeObject(uid, forKey: "uid")
-        
+       aCoder.encodeObject(uid, forKey: "screenName")
+     
         
     }
     

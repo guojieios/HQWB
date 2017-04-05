@@ -272,9 +272,12 @@ extension OAuthViewController {
             
             // 3.从字典中获取 用户的信息
             let UserIcon = UserDict["profile_image_url"] as? String
+            let screenName = UserDict["screen_name"] as? String
             
             // 赋值
             account.userIcon = UserIcon
+            account.screenName = screenName
+            
             
 //            print(account)
             
