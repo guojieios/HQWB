@@ -36,7 +36,10 @@ class PicPickerCollectionView: UICollectionView {
         
         
         // 注册 cell
-        registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: picPickerCell)
+//        registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: picPickerCell)
+
+        
+        registerNib(UINib(nibName: "picPickerViewCell", bundle: nil), forCellWithReuseIdentifier: picPickerCell)
         
         // 设置 数据源
         dataSource = self

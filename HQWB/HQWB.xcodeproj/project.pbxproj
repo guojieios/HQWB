@@ -37,6 +37,8 @@
 		826F06591E893AD700C2E423 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F06581E893AD700C2E423 /* PicCollectionView.swift */; };
 		82780A0C1E826AD80031B4DA /* StatuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82780A0B1E826AD80031B4DA /* StatuesModel.swift */; };
 		827D04BD1E9646F6000198E5 /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */; };
+		827D04C01E964E97000198E5 /* picPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D04BE1E964E97000198E5 /* picPickerViewCell.swift */; };
+		827D04C11E964E97000198E5 /* picPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827D04BF1E964E97000198E5 /* picPickerViewCell.xib */; };
 		828C15171E83E91C00026A68 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C15161E83E91C00026A68 /* NSDate-Extension.swift */; };
 		828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D92941E7FDE9600E00CAA /* UserAccountTools.swift */; };
 		828D929E1E7FF4E500E00CAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */; };
@@ -84,6 +86,8 @@
 		826F06581E893AD700C2E423 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		82780A0B1E826AD80031B4DA /* StatuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatuesModel.swift; sourceTree = "<group>"; };
 		827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		827D04BE1E964E97000198E5 /* picPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = picPickerViewCell.swift; sourceTree = "<group>"; };
+		827D04BF1E964E97000198E5 /* picPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = picPickerViewCell.xib; sourceTree = "<group>"; };
 		828C15161E83E91C00026A68 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		828D92941E7FDE9600E00CAA /* UserAccountTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountTools.swift; sourceTree = "<group>"; };
 		828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */,
+				827D04BE1E964E97000198E5 /* picPickerViewCell.swift */,
+				827D04BF1E964E97000198E5 /* picPickerViewCell.xib */,
 			);
 			path = PicPickerCollectionView;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8238A2C41E94F172003465D5 /* ComposeViewController.xib in Resources */,
+				827D04C11E964E97000198E5 /* picPickerViewCell.xib in Resources */,
 				822E0C261E659EB200BE0573 /* Main.storyboard in Resources */,
 				822E0C281E659F8E00BE0573 /* NULL.storyboard in Resources */,
 				82F7204A1E641DB000B13BA0 /* LaunchScreen.storyboard in Resources */,
@@ -456,6 +463,7 @@
 				8221D0411E6CF6900073D6A2 /* UIBarButtonItem-Extension.swift in Sources */,
 				823A20731E766EA900C9DF54 /* OAuthViewController.swift in Sources */,
 				82F720451E641DB000B13BA0 /* HQWB.xcdatamodeld in Sources */,
+				827D04C01E964E97000198E5 /* picPickerViewCell.swift in Sources */,
 				82C7A7321E7F79C800B13191 /* UserAccount.swift in Sources */,
 				828D929E1E7FF4E500E00CAA /* WelcomeViewController.swift in Sources */,
 				828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */,

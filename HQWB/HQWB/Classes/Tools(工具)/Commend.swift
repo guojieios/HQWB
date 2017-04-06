@@ -16,4 +16,9 @@ import Foundation
 let app_key = "1081732057"
 let redirect_uri = "http://www.makeru.com.cn/"
 let App_Secret = "558e2e5affcc46728421bd920653355f"
-        
+
+
+
+
+// 通知名称
+let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"

@@ -25,10 +25,9 @@ class ComposeViewController: UIViewController {
         setUpNavgiationBar()
         
         
-        
-        
-        // 监听 键盘
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        // 执行通知
+        setUpNotification()
+     
         
         
         
@@ -84,6 +83,21 @@ extension ComposeViewController {
         
         
     }
+    
+    
+    // 通知
+    private func setUpNotification() {
+        
+        
+        // 监听 键盘
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addPhotosClick", name: PicPickerAddPhotoNote, object: nil)
+        
+        
+    }
+    
     
     
 }
@@ -154,6 +168,74 @@ extension ComposeViewController {
     }
     
 }
+
+
+
+// 执行 通知 的事件响应
+extension ComposeViewController {
+    
+   @objc private func addPhotosClick() {
+        
+       // 调用相册
+    // 1.判断 数据源 是否可用
+    if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+        return
+    }
+    
+    
+    // 2.创建照片 控制器
+    let pic = UIImagePickerController()
+    
+    
+    // 3.设置 照片来源
+    pic.sourceType = .PhotoLibrary
+    
+    
+    
+    // 4.设置代理
+    pic.delegate = self
+    
+    
+    // 5.弹出 控制器
+    presentViewController(pic, animated: true, completion: nil)
+    
+    
+    
+    
+        
+        
+    }
+    
+    
+}
+
+
+
+// 照片选择控制器的代理方法
+extension ComposeViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // 1. 打印
+        print(info)
+        
+        
+        // 1. 获取图片
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        // 2. 显示图片
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+}
+
 
 
 
