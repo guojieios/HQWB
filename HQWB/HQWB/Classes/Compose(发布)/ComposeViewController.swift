@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textView: composeTextView!
     // 懒加载 属性
@@ -133,7 +134,24 @@ extension ComposeViewController {
     
     
     
-    
+    // 显示图片 按钮点击
+    @IBAction func picPickerBtnClick(sender: AnyObject) {
+        
+        // 1.退出键盘
+        textView.resignFirstResponder()
+        
+        
+        // 2.修改 collectionView 的高度
+        collectionViewHeightConstraint.constant = UIScreen.mainScreen().bounds.height * 0.65
+        UIView.animateWithDuration(0.5) { 
+            self.view.layoutIfNeeded()
+        }
+        
+        
+        
+        
+        
+    }
     
 }
 

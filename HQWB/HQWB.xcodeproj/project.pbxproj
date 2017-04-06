@@ -36,6 +36,7 @@
 		824BF3961E8503C500F41891 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824BF3951E8503C500F41891 /* UserModel.swift */; };
 		826F06591E893AD700C2E423 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F06581E893AD700C2E423 /* PicCollectionView.swift */; };
 		82780A0C1E826AD80031B4DA /* StatuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82780A0B1E826AD80031B4DA /* StatuesModel.swift */; };
+		827D04BD1E9646F6000198E5 /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */; };
 		828C15171E83E91C00026A68 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C15161E83E91C00026A68 /* NSDate-Extension.swift */; };
 		828D92951E7FDE9600E00CAA /* UserAccountTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D92941E7FDE9600E00CAA /* UserAccountTools.swift */; };
 		828D929E1E7FF4E500E00CAA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */; };
@@ -82,6 +83,7 @@
 		824BF3951E8503C500F41891 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		826F06581E893AD700C2E423 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		82780A0B1E826AD80031B4DA /* StatuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatuesModel.swift; sourceTree = "<group>"; };
+		827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
 		828C15161E83E91C00026A68 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		828D92941E7FDE9600E00CAA /* UserAccountTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountTools.swift; sourceTree = "<group>"; };
 		828D929C1E7FF4E500E00CAA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = visitor;
 			sourceTree = "<group>";
 		};
+		827D04BB1E9646C4000198E5 /* PicPickerCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				827D04BC1E9646F6000198E5 /* PicPickerCollectionView.swift */,
+			);
+			path = PicPickerCollectionView;
+			sourceTree = "<group>";
+		};
 		828D929B1E7FF4CD00E00CAA /* 欢迎界面 */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		82F720541E6427C700B13BA0 /* Compose(发布) */ = {
 			isa = PBXGroup;
 			children = (
+				827D04BB1E9646C4000198E5 /* PicPickerCollectionView */,
 				8238A2C11E94F172003465D5 /* ComposeViewController.swift */,
 				8238A2C21E94F172003465D5 /* ComposeViewController.xib */,
 				8238A2C51E94F59C003465D5 /* composeTitleView.swift */,
@@ -452,6 +463,7 @@
 				824BF3961E8503C500F41891 /* UserModel.swift in Sources */,
 				8221D0521E6D1FBF0073D6A2 /* PopoViewController.swift in Sources */,
 				82F7203D1E641DB000B13BA0 /* AppDelegate.swift in Sources */,
+				827D04BD1E9646F6000198E5 /* PicPickerCollectionView.swift in Sources */,
 				823A20761E76760500C9DF54 /* Commend.swift in Sources */,
 				8221D0571E6D2B200073D6A2 /* HQPresentationController.swift in Sources */,
 				82F7205E1E6433F600B13BA0 /* HomeViewController.swift in Sources */,

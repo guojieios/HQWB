@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="HQWB" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConstraint" destination="itD-tX-JlW" id="qRa-fg-KOs"/>
+                <outlet property="collectionViewHeightConstraint" destination="KtA-rl-uHp" id="BXN-w9-M8E"/>
                 <outlet property="textView" destination="ODW-fH-WHj" id="brg-Cn-f0P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,6 +27,18 @@
                         <outlet property="delegate" destination="-1" id="WVM-7c-BAn"/>
                     </connections>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-G2-ukx" customClass="PicPickerCollectionView" customModule="HQWB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="448" width="474" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="KtA-rl-uHp"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LPp-F4-UqJ">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-ot-HLN">
                     <rect key="frame" x="0.0" y="404" width="474" height="44"/>
                     <constraints>
@@ -38,6 +51,9 @@
                                 <rect key="frame" x="36" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_toolbar_picture"/>
+                                <connections>
+                                    <action selector="picPickerBtnClick:" destination="-1" eventType="touchUpInside" id="3u5-Y4-PXM"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="f6Z-4g-APu"/>
@@ -78,12 +94,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="b8G-G2-ukx" secondAttribute="trailing" id="2Qc-Nt-bxX"/>
                 <constraint firstItem="ODW-fH-WHj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2bw-tF-RCq"/>
                 <constraint firstAttribute="bottom" secondItem="ODW-fH-WHj" secondAttribute="bottom" id="2xI-Mo-RgF"/>
                 <constraint firstItem="ODW-fH-WHj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IjN-SU-Hnq"/>
+                <constraint firstAttribute="bottom" secondItem="b8G-G2-ukx" secondAttribute="bottom" id="MWe-g2-Iir"/>
                 <constraint firstAttribute="trailing" secondItem="dnb-ot-HLN" secondAttribute="trailing" id="Mov-7y-0KM"/>
                 <constraint firstItem="dnb-ot-HLN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QL4-Oe-gzu"/>
                 <constraint firstAttribute="trailing" secondItem="ODW-fH-WHj" secondAttribute="trailing" id="S9c-dp-JpV"/>
+                <constraint firstItem="b8G-G2-ukx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZGN-6M-gFx"/>
                 <constraint firstAttribute="bottom" secondItem="dnb-ot-HLN" secondAttribute="bottom" id="itD-tX-JlW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
