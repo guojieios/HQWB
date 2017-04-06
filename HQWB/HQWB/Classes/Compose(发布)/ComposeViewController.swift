@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textView: composeTextView!
     // 懒加载 属性
     private lazy var titleView : composeTitleView = composeTitleView()
@@ -24,6 +25,12 @@ class ComposeViewController: UIViewController {
         
         
         
+        
+        // 监听 键盘
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        
+        
     }
 
     
@@ -35,6 +42,17 @@ class ComposeViewController: UIViewController {
         
         
     }
+    
+    
+    
+    // 消去 通知
+    deinit {
+        
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
+    
     
 
 }
@@ -83,6 +101,32 @@ extension ComposeViewController {
     @objc private func composeButtonClick() {
         
         print("发布")
+        
+        
+    }
+    
+    
+    @objc private func KeyboardWillChangeFrame(note : NSNotification) {
+      // 1. 获取键盘的动画时间
+        let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+        
+        
+        // 2.获取键盘最终的y值
+        let endFrame = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let y = endFrame.origin.y
+        
+        
+        // 3.计算底部工具栏的高度
+        let margin = UIScreen.mainScreen().bounds.height - y
+        
+        
+        // 4.设置底部工具栏
+        bottomConstraint.constant = margin
+        UIView.animateWithDuration(duration) { 
+            self.view.layoutIfNeeded()
+        }
+        
+        
         
         
     }
