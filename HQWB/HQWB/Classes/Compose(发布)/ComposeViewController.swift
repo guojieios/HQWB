@@ -13,6 +13,13 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textView: composeTextView!
+    
+    @IBOutlet weak var picPickerView: PicPickerCollectionView!
+    
+    // 存取图片的数组
+    private lazy var imageArray : [UIImage] = [UIImage]()
+    
+    
     // 懒加载 属性
     private lazy var titleView : composeTitleView = composeTitleView()
     
@@ -223,8 +230,19 @@ extension ComposeViewController : UIImagePickerControllerDelegate,UINavigationCo
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         
-        // 2. 显示图片
+        // 2. 将选中的图片添加到数组中
+        imageArray.append(image)
         
+        
+        // 3. 将图片 交给 collectionView 显示  ------- 给 picPickerView中的数组 赋值
+        picPickerView.images = imageArray
+        
+        
+        // 4. 返回 图片选择控制器
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        textView.resignFirstResponder()
         
         
         

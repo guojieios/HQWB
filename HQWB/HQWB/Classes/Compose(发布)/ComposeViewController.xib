@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="bottomConstraint" destination="itD-tX-JlW" id="qRa-fg-KOs"/>
                 <outlet property="collectionViewHeightConstraint" destination="KtA-rl-uHp" id="BXN-w9-M8E"/>
+                <outlet property="picPickerView" destination="b8G-G2-ukx" id="Gfs-TU-Zny"/>
                 <outlet property="textView" destination="ODW-fH-WHj" id="brg-Cn-f0P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -15,6 +15,20 @@ private let edgeMargin : CGFloat = 15
 class PicPickerCollectionView: UICollectionView {
 
    
+    // 存取 图片
+    var images : [UIImage] = [UIImage]() {
+        
+        didSet {
+            
+            reloadData()
+            
+        }
+        
+        
+    }
+    
+    
+    
     
     override func awakeFromNib() {
         
@@ -58,19 +72,25 @@ class PicPickerCollectionView: UICollectionView {
 // 数据源方法
 extension PicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return images.count + 1
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         // 1.创建cell
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(picPickerCell, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(picPickerCell, forIndexPath: indexPath) as! picPickerViewCell
         
         
         // 2. 设置 cell
+        // cell 赋值
         cell.backgroundColor = UIColor.redColor()
 
+        
+        //
+       
+        cell.image = indexPath.item <= images.count - 1 ? images[indexPath.item] : nil
+        
         
         
         // 3. 返回cell

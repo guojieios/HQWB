@@ -41,6 +41,9 @@
                 <constraint firstItem="U0Z-Cc-2q5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jd8-vS-wGb"/>
             </constraints>
             <size key="customSize" width="70" height="65"/>
+            <connections>
+                <outlet property="imageButton" destination="Pzu-GI-pky" id="rlM-yT-7H4"/>
+            </connections>
             <point key="canvasLocation" x="205" y="185.5"/>
         </collectionViewCell>
     </objects>
