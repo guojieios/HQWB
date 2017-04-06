@@ -50,6 +50,7 @@
 		82F720601E64387400B13BA0 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7205F1E64387400B13BA0 /* DiscoverViewController.swift */; };
 		82F720621E64388200B13BA0 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F720611E64388200B13BA0 /* MessageViewController.swift */; };
 		82F720641E64388F00B13BA0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F720631E64388F00B13BA0 /* ProfileViewController.swift */; };
+		82FB61471E95DECD00490224 /* composeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB61461E95DECD00490224 /* composeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		82F7205F1E64387400B13BA0 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		82F720611E64388200B13BA0 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		82F720631E64388F00B13BA0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		82FB61461E95DECD00490224 /* composeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = composeTextView.swift; sourceTree = "<group>"; };
 		941B4B1112D0B31EF1C4E0F9 /* Pods_HQWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE71FEB4E834FA86649B3999 /* Pods-HQWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HQWB/Pods-HQWB.debug.xcconfig"; sourceTree = "<group>"; };
 		C7D34A9A0D6434E7019B51B6 /* Pods-HQWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-HQWB/Pods-HQWB.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				8238A2C11E94F172003465D5 /* ComposeViewController.swift */,
 				8238A2C21E94F172003465D5 /* ComposeViewController.xib */,
 				8238A2C51E94F59C003465D5 /* composeTitleView.swift */,
+				82FB61461E95DECD00490224 /* composeTextView.swift */,
 			);
 			path = "Compose(发布)";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				826F06591E893AD700C2E423 /* PicCollectionView.swift in Sources */,
 				8238A2C61E94F59C003465D5 /* composeTitleView.swift in Sources */,
 				82489A281E67C74500E54A2A /* Category-Button.swift in Sources */,
+				82FB61471E95DECD00490224 /* composeTextView.swift in Sources */,
 				8238A2C31E94F172003465D5 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

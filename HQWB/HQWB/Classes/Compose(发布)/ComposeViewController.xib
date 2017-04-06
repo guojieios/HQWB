@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="HQWB" customModuleProvider="target">
             <connections>
+                <outlet property="textView" destination="ODW-fH-WHj" id="brg-Cn-f0P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,25 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="287" height="368"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viV-iL-dhG">
-                    <rect key="frame" x="80" y="67" width="97" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ODW-fH-WHj">
-                    <rect key="frame" x="23" y="43" width="240" height="128"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ODW-fH-WHj" customClass="composeTextView" customModule="HQWB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="287" height="368"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="WVM-7c-BAn"/>
+                    </connections>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ODW-fH-WHj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2bw-tF-RCq"/>
+                <constraint firstAttribute="bottom" secondItem="ODW-fH-WHj" secondAttribute="bottom" id="2xI-Mo-RgF"/>
+                <constraint firstItem="ODW-fH-WHj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IjN-SU-Hnq"/>
+                <constraint firstAttribute="trailing" secondItem="ODW-fH-WHj" secondAttribute="trailing" id="S9c-dp-JpV"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="viV-iL-dhG"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="341.5" y="147"/>
         </view>
     </objects>

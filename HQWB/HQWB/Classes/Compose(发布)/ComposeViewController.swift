@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
     
+    @IBOutlet weak var textView: composeTextView!
     // 懒加载 属性
     private lazy var titleView : composeTitleView = composeTitleView()
     
@@ -25,6 +26,15 @@ class ComposeViewController: UIViewController {
         
     }
 
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        textView.becomeFirstResponder()
+        
+        
+    }
     
 
 }
@@ -82,5 +92,33 @@ extension ComposeViewController {
     
     
 }
+
+
+
+// textView 代理
+extension ComposeViewController : UITextViewDelegate {
+    
+    func textViewDidChange(textView: UITextView) {
+        
+        // 背景文字取消掉
+        self.textView.placeholderLabel.hidden = textView.hasText()
+        
+        // 发布按钮 打开
+        navigationItem.rightBarButtonItem?.enabled = textView.hasText()
+        
+        
+    }
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        textView.resignFirstResponder()
+    }
+    
+    
+}
+
+
+
+
 
 
