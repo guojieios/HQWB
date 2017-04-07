@@ -218,6 +218,47 @@ extension NetworkTools {
 }
 
 
+// 发送文字微博
+extension NetworkTools {
+    
+    func sendStatus(statusText : String, isSuccess : (isSuccess : Bool)->()) {
+        
+        // 1. 获取链接
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        
+        // 2. 设置 请求参数
+        let parameter = ["access_token" : (UserAccountTools.ShareInstance.account?.access_token)!,"status" : statusText]
+        
+        
+        // 3. 发送网络请求
+        request(.POST, usrString: urlString, parameters: parameter) { (result, error) in
+            
+            if result != nil {
+                
+                isSuccess(isSuccess: true)
+                
+            } else {
+                
+                isSuccess(isSuccess: false)
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+}
+
+
 
 
 

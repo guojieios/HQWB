@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     
@@ -125,7 +126,37 @@ extension ComposeViewController {
     // 发布
     @objc private func composeButtonClick() {
         
-        print("发布")
+        
+        // 0. 退出键盘
+        textView.resignFirstResponder()
+        
+        
+        // 1.获取发送微博的内容
+        let statusText = textView.text
+        
+        // 2. 发送网络请求
+        NetworkTools.ShareInstance.sendStatus(statusText) { (isSuccess) in
+            
+            if !isSuccess {
+                
+                SVProgressHUD.showErrorWithStatus("微博发送失败！！")
+                
+                
+                return
+            }
+                
+            
+            
+            SVProgressHUD.showSuccessWithStatus("微博发送成功！！")
+             self.dismissViewControllerAnimated(true, completion: nil)
+          
+            
+            
+        }
+        
+        
+        
+        
         
         
     }
