@@ -22,3 +22,4 @@ let App_Secret = "558e2e5affcc46728421bd920653355f"
 
 // 通知名称
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
+let PicPickerRemovPhotoNote = "PicPickerRemovPhotoNote"
