@@ -157,8 +157,12 @@ extension HomeViewCell {
     private func CalculatePicViewSize(count : Int) -> CGSize {
         
         
+        
+        
+        
         // 1. 没有图片
         if count == 0 {
+            
             return CGSizeZero
         }
         
@@ -173,11 +177,16 @@ extension HomeViewCell {
             // 字符串
             let urlString = viewModel?.pictureURL.last?.absoluteString
             let image = SDWebImageManager.sharedManager().imageCache?.imageFromDiskCacheForKey(urlString) ?? nil
+//             let image = SDWebImageManager.sharedManager().imageCache!.imageFromDiskCacheForKey(urlString)
+            
+//            return
             
             
             if image == nil {
                 
-                return CGSizeZero
+                
+                
+                return CGSize(width: 80, height: 80)
             }
             
             // 设置item的大小
@@ -188,11 +197,16 @@ extension HomeViewCell {
             return CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
         }
         
+        // 4.计算出来imageViewWH
+        let imageViewWH = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
+        
+        // 5.设置其他张图片时layout的itemSize
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
         
-        // 每张图片的宽度
+//        // 每张图片的宽度
         let  imageViewW = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
-        
+//
         
         // 2. 4 张图片
         if count == 4 {

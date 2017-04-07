@@ -24,10 +24,10 @@ class ComposeViewController: UIViewController {
     // 懒加载 属性
     private lazy var titleView : composeTitleView = composeTitleView()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // 设置 导航控制栏
         setUpNavgiationBar()
@@ -35,12 +35,12 @@ class ComposeViewController: UIViewController {
         
         // 执行通知
         setUpNotification()
-     
+        
         
         
         
     }
-
+    
     
     
     override func viewDidAppear(animated: Bool) {
@@ -62,7 +62,7 @@ class ComposeViewController: UIViewController {
     }
     
     
-
+    
 }
 
 
@@ -83,7 +83,7 @@ extension ComposeViewController {
         navigationItem.rightBarButtonItem?.enabled = false
         
         
-    
+        
         // 2. 添加 title视图
         titleView.frame = CGRectMake(0, 0, 100, 40)
         navigationItem.titleView = titleView
@@ -134,24 +134,48 @@ extension ComposeViewController {
         // 1.获取发送微博的内容
         let statusText = textView.text
         
-        // 2. 发送网络请求
-        NetworkTools.ShareInstance.sendStatus(statusText) { (isSuccess) in
+        
+        // 2.获取用户的图片
+        if let images : UIImage = imageArray.first {
+            NetworkTools.ShareInstance.sendStatus(statusText, image: images, isSuccess: { (isSuccess) in
+                
+                if !isSuccess {
+                    
+                    SVProgressHUD.showErrorWithStatus("微博发送失败！！")
+                    
+                    
+                    return
+                }
+                
+                
+                
+                SVProgressHUD.showSuccessWithStatus("微博发送成功！！")
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                
+                
+            })
+        } else {
             
-            if !isSuccess {
+            // 2. 发送网络请求
+            NetworkTools.ShareInstance.sendStatus(statusText) { (isSuccess) in
                 
-                SVProgressHUD.showErrorWithStatus("微博发送失败！！")
+                if !isSuccess {
+                    
+                    SVProgressHUD.showErrorWithStatus("微博发送失败！！")
+                    
+                    
+                    return
+                }
                 
                 
-                return
+                
+                SVProgressHUD.showSuccessWithStatus("微博发送成功！！")
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                
+                
             }
-                
-            
-            
-            SVProgressHUD.showSuccessWithStatus("微博发送成功！！")
-             self.dismissViewControllerAnimated(true, completion: nil)
-          
-            
-            
         }
         
         
@@ -163,7 +187,7 @@ extension ComposeViewController {
     
     
     @objc private func KeyboardWillChangeFrame(note : NSNotification) {
-      // 1. 获取键盘的动画时间
+        // 1. 获取键盘的动画时间
         let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
         
         
@@ -178,7 +202,7 @@ extension ComposeViewController {
         
         // 4.设置底部工具栏
         bottomConstraint.constant = margin
-        UIView.animateWithDuration(duration) { 
+        UIView.animateWithDuration(duration) {
             self.view.layoutIfNeeded()
         }
         
@@ -198,7 +222,7 @@ extension ComposeViewController {
         
         // 2.修改 collectionView 的高度
         collectionViewHeightConstraint.constant = UIScreen.mainScreen().bounds.height * 0.65
-        UIView.animateWithDuration(0.5) { 
+        UIView.animateWithDuration(0.5) {
             self.view.layoutIfNeeded()
         }
         
@@ -215,34 +239,34 @@ extension ComposeViewController {
 // 执行 通知 的事件响应
 extension ComposeViewController {
     
-   @objc private func addPhotosClick() {
+    @objc private func addPhotosClick() {
         
-       // 调用相册
-    // 1.判断 数据源 是否可用
-    if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
-        return
-    }
-    
-    
-    // 2.创建照片 控制器
-    let pic = UIImagePickerController()
-    
-    
-    // 3.设置 照片来源
-    pic.sourceType = .PhotoLibrary
-    
-    
-    
-    // 4.设置代理
-    pic.delegate = self
-    
-    
-    // 5.弹出 控制器
-    presentViewController(pic, animated: true, completion: nil)
-    
-    
-    
-    
+        // 调用相册
+        // 1.判断 数据源 是否可用
+        if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            return
+        }
+        
+        
+        // 2.创建照片 控制器
+        let pic = UIImagePickerController()
+        
+        
+        // 3.设置 照片来源
+        pic.sourceType = .PhotoLibrary
+        
+        
+        
+        // 4.设置代理
+        pic.delegate = self
+        
+        
+        // 5.弹出 控制器
+        presentViewController(pic, animated: true, completion: nil)
+        
+        
+        
+        
         
         
     }
